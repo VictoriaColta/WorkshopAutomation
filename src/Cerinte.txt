@@ -1,0 +1,42 @@
+
+            Folosind model/Application.java, sa se deschida aplicatia https://the-internet.herokuapp.com/.
+
+            cerinta_1:
+                Step 1: Click pe Add/Remove Elements de pe pagina principala
+                Step 2: Click pe butonul Add Element
+                Step 3: Sa se verifice display la butonul Delete
+                Step 4: Click pe button Delete
+                Step 5: Sa se verifice ca butonul Delete nu mai apare
+
+Folosind model/Application.java, sa se deschida aplicatia https://demoqa.com/
+            cerinta_2:
+                Step 1: Click pe Elements de pe pagina principala
+                Step 2: Click pe Check Box din lista
+                Step 3: Expand Home prin click pe sageata
+                Step 4: Click pe checkbox-ul aferent "Desktop"
+                Step 5: Sa se salveze textul generat de checkbox-ul selectat intr-o variabila, apoi afisata in consola
+
+            cerinta_3
+                Step 1: Click pe Elements de pe pagina principala
+                Step 2: Click pe Web Tables din lista
+                Step 3: Editeaza al 2lea rand cu urmatoarele valori: First Name: Ion, Last Name: Pop, Age: 40, Email: test@automation.com, Salary: 15000, Department: Legal
+                Step 4: Sa se stearga al 3lea rand din tabel
+                Step 5: Adauga o noua linie in tabel cu orice valori
+
+            cerinta_4
+                Step 1: Click pe Elements de pe pagina principala
+                Step 2: Click pe Upload and Download din lista
+                Step 3: Sa se faca un upload cu un fisier de tip .zip
+
+            cerinta_5
+                Step 1: Click pe Alerts, Frame & Windows de pe pagina principala
+                Step 2: Click pe "Frames" din lista
+                Step 3: Sa se salveze textul ce apare in iframe, intr-o variabila String
+
+            cerinta_6
+                Step 1: Click pe Widgets de pe pagina principala
+                Step 2: Click pe "Date Picker" din lista
+                Step 3: Sa se adauge o data pentru fiecare input, cu exact 30 de zile in viitor de la momentul rularii
+
+            cerinta_7
+                Mapeaza pagina principala https://demoqa.com/, pentru a putea fi usor de mentinut, folosind orice metoda (ex: pom)
