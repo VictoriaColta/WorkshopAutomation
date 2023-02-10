@@ -1,0 +1,114 @@
+                                                  XPATH LOCATORS
+
+
+1) Locatorul  //button[@onclick='swapCheckbox()'] are urmatoarele:
+- tagname = button
+- attribute = onclick
+- attribute value = swapCheckbox()
+- rol: identifica in pagina "Dynamic Controls"(https://the-internet.herokuapp.com/dynamic_controls) butonul "Remove"
+
+2) Locatorul //div[@id='checkbox'] are urmatoarele:
+- tagname = div
+- attribute = id
+- attribute value = checkbox
+- rol: identifica in pagina "Dynamic Controls"(https://the-internet.herokuapp.com/dynamic_controls) checkbox-ul "A checkbox"
+
+3) Locatorul //input[@class='form-control-file'] are urmatoarele :
+- tagname = inpus
+- attribute = class
+- attribute value = form-control-file
+- rol: identifica in pagina 'Upload and Download'(https://demoqa.com/upload-download) butonul 'Choose File'
+
+4) Accesand pagina 'https://demoqa.com/text-box' am vrut sa caut elementul pentru casuta "Full Name".
+Am scris locatorul "//input[@autocomplete='off']". Acest locator imi returna doua rezultate: unul specific casutei 'Full Name', celalalt specific casutei "Email"
+Am adaugat in locator inca un atribut, pentru a-mi returna doar elementul de care aveam nevoie ,cel pentru "Full Name":  //input[@autocomplete='off'and @placeholder='Full Name']
+Contine doua atribute(autocomplete si placeholder) si tag name-ul "input"
+
+5) Locatorul //a[@id='bad-request'] are urmatoarele:
+- tagname = a
+- attribute = id
+- attribute value = bad-request
+- rol: identifica in pagina "Links"(https://demoqa.com/links) link-ul "Bad Request"
+
+6) Locatorul //button[@id='startStopButton'] are urmatoarele:
+- tagname = button
+- attribute = id
+- attribute value = startStopButton
+- rol: identifica in pagina "Widgets-Progress Bar"(https://demoqa.com/progress-bar) butonul "Start"
+
+ 7) Locatorul (//img[@src='/images/bookimage3.jpg'])[1] are urmatoarele:
+- tagname = img
+- attribute = src
+- attribute value = /images/bookimage3.jpg
+- rol: identifica in pagina "Book Store"(https://demoqa.com/books) cartea nr 4 din lista "Speaking Java"
+Am pus xpath-ul intre paranteze rotunde si la final am adaugat [1], pentru a-mi localiza in pagina doar cartea de care aveam nevoie.( Fara (...)[1] imi localiza doua carti)
+
+ 8) Locatorul //div[@id='content'] are urmatoarele:
+- tagname = div
+- attribute = id
+- attribute value = content
+- rol: identifica in pagina "Nested Frames"(https://the-internet.herokuapp.com/nested_frames) textul "MIDDLE"
+
+ 9) Locatorul //a[@href='/gallery/'] are urmatoarele:
+- tagname = a
+- attribute = href
+- attribute value = /gallery/
+- rol: identifica in pagina "Disappearing Elements"(https://the-internet.herokuapp.com/disappearing_elements) butonul "Gallery"
+
+10) Locatorul //img[@style='position: absolute; top: 0; right: 0; border: 0;'] are urmatoarele :
+- tagname = img
+- attribute = style
+- attribute value = position: absolute; top: 0; right: 0; border: 0;
+- rol: identifica in pagina "Large & Deel DOM"(https://the-internet.herokuapp.com/large) butonul "Fork me on GitHub"
+
+11) Locatorul (//div[@class='rt-resizable-header-content'])[5] are urmatoarele:
+- tagname = div
+- attribute = class
+- attribute value = rt-resizable-header-content
+- rol: identifica in pagina "Web Tables"(https://demoqa.com/webtables) textul "Salary"
+
+12) Locatorul //input[contains(@class,'gLFyf')] are urmatoarele:
+- tagname = input
+- attribute = class
+- attribute value = gLFyf
+- method = contains()
+- rol: identifica in pagina de start "Google"(https://www.google.co.in) text box-ul de cautare
+
+13) Locatorul (//label[contains(@class,'custom-control-label')])[4] are urmatoarele:
+- tagname = label
+- attribute = class
+- attribute value = custom-control-label
+- method = contains()
+- rol: identifica in pagina "Practice Form"(https://demoqa.com/automation-practice-form) textul "Sports"
+
+14) Locatorul //h1[text()='Locating Strategies- (By XPath)'] are urmatoarele:
+- tagname = h1
+- method = text()
+- string = Locating Strategies- (By XPath)
+- rol: identifica in pagina "https://www.javatpoint.com/selenium-webdriver-locating-strategies-by-xpath" textul "Locating Strategies- (By XPath)"
+
+15) Locatorul //h3[text()='Status Codes'] are urmatoarele:
+- tagname = h3
+- method = text()
+- string = 'Status Codes'
+- rol: identifica in pagina "https://the-internet.herokuapp.com/status_codes" textul "Status Codes"
+
+16) Locatorul //div[starts-with(@class,'mb-3')] are urmatoarele :
+- tag name = div
+- attribute = class
+- attribute value = mb-3
+- method = starts-with()
+- rol: identifica in pagina "https://demoqa.com/radio-button" textul "Do you like the site?"
+
+17) Locatorul //div[text()='Do you like the site?'] are urmatoarele :
+- tag name = div
+- String = 'Do you like the site?'
+- method = text()
+- rol: identifica in pagina "https://demoqa.com/radio-button" textul "Do you like the site?"
+
+18) Locatorul //p[starts-with(@id,'uzqRG')] are urmatoarele:
+- tagname = p
+- attribute = id
+- attribute value = uzqRG
+- method = starts-with()
+- rol: identifica in pagina "https://demoqa.com/dynamic-properties" textul "This text has random Id"
