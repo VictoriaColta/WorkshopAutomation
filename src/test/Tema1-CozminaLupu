@@ -1,0 +1,39 @@
+1. https://the-internet.herokuapp.com/iframe
+"Edit" button:
+//span[contains(text(),'Edit')]
+
+2. https://the-internet.herokuapp.com/broken_images
+Third image:
+//img[@src='img/avatar-blank.jpg']
+
+3. https://the-internet.herokuapp.com/dynamic_controls
+Checkbox:
+//div[@id='checkbox']
+
+4. https://the-internet.herokuapp.com/dynamic_controls
+Input box:
+//input[@type='text']
+
+5. https://the-internet.herokuapp.com/dynamic_controls
+"Enable" button:
+//button[@onclick='swapInput()']
+
+6. https://the-internet.herokuapp.com/download
+First .exe in list:
+//a[@href='download/chromedriver.exe']
+
+7. https://the-internet.herokuapp.com/forgot_password
+E-mail text:
+//label[@for='email']
+
+8. https://the-internet.herokuapp.com/forgot_password
+Input box:
+//input[@id='email']
+
+9. https://the-internet.herokuapp.com/geolocation
+"Where am I?" button:
+//button[@onclick='getLocation()']
+
+10. https://the-internet.herokuapp.com/geolocation
+Geolocation details after clicking on "Where am I?" button:
+//p[@id='demo']
