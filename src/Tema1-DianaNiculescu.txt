@@ -112,3 +112,38 @@ Am pus xpath-ul intre paranteze rotunde si la final am adaugat [1], pentru a-mi 
 - attribute value = uzqRG
 - method = starts-with()
 - rol: identifica in pagina "https://demoqa.com/dynamic-properties" textul "This text has random Id"
+
+
+                           LOCATING WEB ELEMENTS USING DIFFERENT X-PATHS
+
+(A) On page https://the-internet.herokuapp.com/abtest   find the "A/B Test Control" text:
+    1) by tag name:   //h3
+    2) using text() method:   //h3[text()='A/B Test Control']
+    3) //div/h3
+
+(B) On page https://the-internet.herokuapp.com/login    find the "Login" button:
+    1) by using multiple attribute value:  //button[@class='radius' and @ type='submit']
+    2) by using one attribute value:       //button[@class='radius']
+    3) by using "starts-wtih":             //button[starts-with(@class,'ra')]
+    4) using tagname:                      //button
+
+(C) On page https://the-internet.herokuapp.com/key_presses  find the textbox:
+    1) (//*[@id])[3]
+    2) by tagname: //input
+    3) by using multiple attribute value:   //input[@id='target' and @type='text']
+    4) by using "starts-with":  //input[starts-with(@id,'tar')]
+    5) by using "contains()" method:  //input[contains(@id,'target')]
+
+(D) On page https://the-internet.herokuapp.com/ find the text "Add/Remove Elements":
+    1) using index selector: (//li)[2]
+    2) using "text()" method: //a[text()='Add/Remove Elements']
+
+
+
+
+
+
+
+
+
+
