@@ -1,4 +1,10 @@
 demoqa.vcom/text-box
 
-1. text-box for full name
-      xpath=//div[@id="username"]
+1. text-box for Full Name
+      xpath=//*[@id="userName"]
+2. text-box for Email
+      xpath=//*[@id="userEmail"]
+3. text-box for Current Address
+      xpath=//*[@id="currentAddress"]
+4. text for "Permanent Address"
+      xpath=//*[@id="permanentAddress-label"]
