@@ -14,6 +14,7 @@ import org.testng.annotations.Test;
 import java.security.Key;
 
 import static java.lang.Thread.sleep;
+import static org.apache.commons.io.ThreadMonitor.sleep;
 
 public class FindAndClick {
 
