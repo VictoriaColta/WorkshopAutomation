@@ -16,7 +16,6 @@ public class Application {
         return driver.get();
     }
 
-
     public static void start() {
         //TO DO: Set the path to driver - fill where is necessary
         System.setProperty("webdriver.chrome.driver", "C:\\ProgramData\\chocolatey\\lib\\chromedriver\\tools\\chromedriver.exe");
