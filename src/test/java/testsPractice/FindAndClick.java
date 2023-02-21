@@ -15,6 +15,8 @@ public class FindAndClick {
         //Deschide browser si deschide applicatia web
         Application.start();
 
+        System.out.println("Debug");
+
         //cauta un singur element si il salveaza intr-o variabila de tip WebElement
 
 
