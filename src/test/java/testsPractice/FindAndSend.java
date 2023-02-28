@@ -40,5 +40,6 @@ public class FindAndSend {
         WebElement loginButton = Application.driver().findElement(login);
         loginButton.click();
         driver.close();
+
     }
 }

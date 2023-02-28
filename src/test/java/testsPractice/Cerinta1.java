@@ -49,5 +49,6 @@ public class Cerinta1 {
 
      WebElement  deleteIsNotDisplayed = driver.findElement(By.xpath("//button[@class='added-manually']"));
     assertFalse(deleteIsNotDisplayed.findElement(By.xpath("//button[@class='added-manually']")).isDisplayed());
+
  }
 }

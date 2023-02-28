@@ -27,7 +27,6 @@ public class DragAndDrop {
         WebDriver driver = Application.driver();
         driver.get("https://demoqa.com/droppable/");
 
-
         //Creeam un obiect din clasa Actions
         Actions actions = new Actions(driver);
 

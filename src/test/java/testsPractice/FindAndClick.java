@@ -38,7 +38,6 @@ public class FindAndClick {
         //Inchide applicatia
         Application.close();
 
-
     }
 
 }

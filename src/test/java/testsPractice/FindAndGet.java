@@ -23,7 +23,6 @@ public class FindAndGet {
 
         WebElement text = driver.findElement(By.xpath("//p[contains(text(),'Also known as split testing. This is a way in whic')]"));
 
-
         //Printeaza acel text in consola
 
         System.out.println("Print text " + text.getText());
