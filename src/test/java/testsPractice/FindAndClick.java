@@ -2,21 +2,15 @@ package testsPractice;
 
 import model.Application;
 import org.openqa.selenium.By;
-import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.interactions.Actions;
-import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.How;
 import org.testng.annotations.Test;
 
-import java.security.Key;
 
 public class FindAndClick {
 
-    private By addElement = By.xpath("//a[@href='/add_remove_elements/']");
-    private By elementButton = By.xpath("//button[@onclick='addElement()']");
+    private final By addElement = By.xpath("//a[@href='/add_remove_elements/']");
+    private final By elementButton = By.xpath("//button[@onclick='addElement()']");
 
 
     @Test
