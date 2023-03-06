@@ -1,6 +1,11 @@
 package testsPractice;
 
+import model.Application;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import static model.Application.driver;
@@ -18,17 +23,25 @@ public class DragAndDrop {
     @Test
     public void dragAndDrop() {
         //Deschidem aplicatia web in browser avand pagina dorita in URL https://demoqa.com/droppable/
-
+        Application.start();
+        WebDriver driver = Application.driver();
+        driver.get("https://demoqa.com/droppable/");
 
 
         //Creeam un obiect din clasa Actions
         Actions actions = new Actions(driver());
 
         //Indentificam elementele cu care vom interactiona
+        WebElement sourceElement = driver.findElement(By.xpath("//*[@id=\"draggable\"]"));
+        WebElement destinationElement = driver.findElement(By.xpath("//*[@id=\"droppable\"]"));
 
         //Apelam metoda dragAndDrop folosind obiectul creat
+        actions.dragAndDrop(sourceElement, destinationElement).perform();
 
+        String msgDropped = destinationElement.getText();
+        Assert.assertEquals(msgDropped, "Dropped!");
 
+        Application.close();
     }
 
 }
