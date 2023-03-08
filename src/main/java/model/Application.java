@@ -9,7 +9,7 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 
 public class Application {
 //TO DO
-    private static final String link = "https://demoqa.com/";
+
     private static ThreadLocal<WebDriver> driver = new ThreadLocal<>();
 
     public static WebDriver driver() {
@@ -24,8 +24,8 @@ public class Application {
         options.addArguments("start-maximized");
         driver.set(new ChromeDriver(options));
 
-        //TO DO: Set the URL
-        driver().get(link);
+
+
     }
 
     public static void close() {
