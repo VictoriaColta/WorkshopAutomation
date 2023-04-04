@@ -15,7 +15,7 @@ public class POM_FindAndSend {
         driver.get("https://demoqa.com/login");
         FindAndSendElements.printUserName();
         FindAndSendElements.userNameIsDisplayed();
-        FindAndSendElements.sendUserName();
+        FindAndSendElements.sendUserName("Ana");
         FindAndSendElements.sendAnotherUserName();
         FindAndSendElements.sendPassword();
         FindAndSendElements.clickLoginButton();

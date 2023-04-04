@@ -18,14 +18,14 @@ public class ABTestngPageElements {
         abTestingPageElementButton.click();
     }
 
-    public static void getTitle() {
+    public static String getTitle() {
         WebElement title = driver().findElement(titleElement);
 
-        System.out.println(title.getText());
+        return title.getText();
     }
-    public static void getParagraph() {
+    public static String getParagraph() {
         WebElement paragraph = driver().findElement(paragraphElement);
 
-        System.out.println(paragraph.getText());
+        return paragraph.getText();
     }
 }

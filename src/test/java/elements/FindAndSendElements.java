@@ -1,6 +1,7 @@
 package elements;
 
 import model.Application;
+import model.SecondApplication;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -17,19 +18,19 @@ public class FindAndSendElements {
 
     public static void printUserName() {
 
-        WebElement username = Application.driver().findElement(userNameElement);
+        WebElement username = SecondApplication.driver().findElement(userNameElement);
         System.out.println(username);
     }
     public static void userNameIsDisplayed() {
 
-        WebElement username = Application.driver().findElement(userNameElement);
+        WebElement username = SecondApplication.driver().findElement(userNameElement);
         Assert.assertTrue(username.isDisplayed());
     }
 
-    public static void sendUserName() {
+    public static void sendUserName(String user) {
 
-        WebElement username = Application.driver().findElement(userNameElement);
-        username.sendKeys("Andreea");
+        WebElement username = SecondApplication.driver().findElement(userNameElement);
+        username.sendKeys();
     }
 
     public static void sendAnotherUserName() {

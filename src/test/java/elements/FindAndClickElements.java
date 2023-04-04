@@ -3,6 +3,7 @@ package elements;
 import model.Application;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
+import org.testng.Assert;
 
 import static model.Application.driver;
 
@@ -27,5 +28,17 @@ public class FindAndClickElements {
         WebElement deleteButton = driver().findElement(deleteElement);
 
         deleteButton.click();
+    }
+
+    public static void deleteButtonIsDisplayed() {
+        WebElement deleteButton = driver().findElement(deleteElement);
+
+        Assert.assertTrue(deleteButton.isDisplayed());
+    }
+
+    public static void deleteButtonIsNotDisplayed() {
+        WebElement deleteButton = driver().findElement(deleteElement);
+
+        Application.driver().findElement(deleteElement);
     }
 }
