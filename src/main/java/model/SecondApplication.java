@@ -31,7 +31,10 @@ public class SecondApplication {
 
 
     }
-
+    public static void backFromBrowser() {
+        //Write your code here to close the driver
+        driver().navigate().back();
+    }
     public static void close() {
         //Write your code here to close the driver
         driver().close();
