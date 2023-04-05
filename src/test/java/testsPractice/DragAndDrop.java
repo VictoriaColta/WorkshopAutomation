@@ -19,11 +19,11 @@ public class DragAndDrop {
     @Test
     public void dragAndDrop() {
         //Deschidem aplicatia web in browser avand pagina dorita in URL https://demoqa.com/droppable/
-
+        Application.start();
 
         //Creeam un obiect din clasa Actions
-        //Actions actions = new Actions(driver());
-        Application.start();
+        Actions actions = new Actions(driver());
+
         //Indentificam elementele cu care vom interactiona
 
         //Apelam metoda dragAndDrop folosind obiectul creat

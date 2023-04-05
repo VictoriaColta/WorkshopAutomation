@@ -1,4 +1,50 @@
 xPath locators
 10 locatori
 
-1.
+1.https://demoqa.com/text-box
+Text Box button
+//span[contains(text(),'Text Box')]
+
+2. https://demoqa.com/text-box
+Field Full Name
+//input[@id="userName"]
+
+3.https://demoqa.com/checkbox
+Drop down Home
+//*[@class="rct-icon rct-icon-expand-open"]
+
+4.https://demoqa.com/checkbox
+Check box Home
+//*[@class="rct-icon rct-icon-uncheck"]
+
+5.https://demoqa.com/radio-button
+Radio button Yes
+//input[@id="yesRadio"]
+
+6.https://demoqa.com/webtables
+Button Add
+//button[@id="addNewRecordButton"]
+
+7.https://demoqa.com/links
+Link HomeHSST9
+//*[@id="dynamicLink"]
+
+8.https://demoqa.com/broken
+Broken link
+//a[@href="http://the-internet.herokuapp.com/status_codes/500"]
+
+9.https://demoqa.com/upload-download
+upload file button
+//input[@id="uploadFile"]
+
+10.https://demoqa.com/upload-download
+Download button
+//a[@id="downloadButton"]
+
+11.https://demoqa.com/automation-practice-form
+Current Address text box
+//textarea[@id="currentAddress"]
+
+12.https://demoqa.com/auto-complete
+Field Type multiple color names
+//div[@class="auto-complete__value-container auto-complete__value-container--is-multi css-1hwfws3"]
