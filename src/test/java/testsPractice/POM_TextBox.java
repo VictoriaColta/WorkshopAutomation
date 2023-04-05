@@ -10,6 +10,7 @@ public class POM_TextBox {
     public void testPOM()  {
         SecondApplication.start();
         HomePageElements.clickOnElementsSection();
+        Elements.validateTextBoxDisplayed();
         Elements.clickTextBox();
         TextBox.setFullName("James Bond");
         TextBox.setEmail("JamesBond007@yahoo.com");

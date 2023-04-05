@@ -4,15 +4,17 @@ import model.SecondApplication;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
+import org.testng.Assert;
+
 import static model.SecondApplication.driver;
 public class HomePageElements {
     private static By elementsSectionElement = By.xpath("//h5[normalize-space()='Elements']");
     private static By formsSectionElement = By.xpath("//h5[normalize-space()='Forms']");
     private static By alertsFrameWindowsSectionElement = By.xpath("//h5[normalize-space()='Alerts, Frame & Windows']");
-    private static By widgetsButtonElement = By.xpath(" //h5[normalize-space()='Widgets']");
-    private static By interactionsButtonElement = By.xpath(" //h5[normalize-space()='Interactions']");
+    private static By widgetsButtonElement = By.xpath("//h5[normalize-space()='Widgets']");
+    private static By interactionsButtonElement = By.xpath("//h5[normalize-space()='Interactions']");
     private static By bookStoreApplicationButtonElement = By.xpath(" //h5[normalize-space()='Book Store Application']");
-
+    private static By allSectionElement = By.className("home-body");
     public static void clickOnElementsSection() {
 
         WebElement elements = SecondApplication.driver().findElement(elementsSectionElement);
@@ -26,7 +28,12 @@ public class HomePageElements {
         alertsFrameWindowsSection.click();
 
     }
+    public static void validateHomePageDisplayed() {
 
+        WebElement allSection = driver().findElement(allSectionElement);
+        Assert.assertTrue(allSection.isDisplayed());
+
+    }
     public static void clickWidgetsSection() {
         WebElement widgets = driver().findElement(widgetsButtonElement);
         widgets.click();

@@ -2,6 +2,8 @@ package elements;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
+import org.testng.Assert;
+
 import static model.SecondApplication.driver;
 public class Elements {
     // locators
@@ -29,5 +31,11 @@ public class Elements {
     public static void clickUploadsAndDownloads() {
         WebElement uploadsAndDownloads = driver().findElement(uploadsAndDownloadsElement);
         uploadsAndDownloads.click();
+    }
+    public static void validateTextBoxDisplayed() {
+
+        WebElement textBoxSection = driver().findElement(textBoxElement);
+        Assert.assertTrue(textBoxSection.isDisplayed());
+
     }
 }

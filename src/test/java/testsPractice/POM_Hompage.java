@@ -15,6 +15,7 @@ public class POM_Hompage {
         HomePageElements.clickOnElementsSection();
         SecondApplication.backFromBrowser();
 
+        HomePageElements.validateHomePageDisplayed();
         HomePageElements.clickFormsSection();
         SecondApplication.backFromBrowser();
 
@@ -23,10 +24,12 @@ public class POM_Hompage {
 
         HomePageElements.clickWidgetsSection();
         SecondApplication.backFromBrowser();
+        HomePageElements.validateHomePageDisplayed();
+
 
         HomePageElements.clickInteractionsSection();
         SecondApplication.backFromBrowser();
-
+        HomePageElements.validateHomePageDisplayed();
 
         HomePageElements.clickBookStoreApplicationSection();
         SecondApplication.backFromBrowser();

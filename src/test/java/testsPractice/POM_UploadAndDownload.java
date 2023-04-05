@@ -22,7 +22,10 @@ public class POM_UploadAndDownload {
 //    Step 2:
         Elements.clickUploadsAndDownloads();
 
+
+        UploadAndDownloadElements.uploadFileDisplayed();
 //    Step 3:
+
         UploadAndDownloadElements.clickUploadFile();
         UploadAndDownloadElements.uploadFile();
 
