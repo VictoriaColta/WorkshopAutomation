@@ -20,6 +20,8 @@ public class TextBox {
     public static By emailSubmitted = By.id("email");
     public static By currentAddressSubmitted = By.xpath("//p[@id='currentAddress']");
     public static By permanentAddressSubmitted = By.xpath("//p[@id='permanentAddress']");
+
+
     public static void enterValue(By locator, String value) {
 
         WebElement field = driver().findElement(locator);

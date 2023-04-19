@@ -17,6 +17,8 @@ import static model.ApplicationNumberTwo.driver;
 
 // A doua rezolvare
 
+// TextBox.enterFullName("John")
+
 public class POMTestTextBox {
 
     @Test

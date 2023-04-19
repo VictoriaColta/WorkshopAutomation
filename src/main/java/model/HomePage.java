@@ -17,10 +17,21 @@ public class HomePage {
     public static By elements = By.xpath("//*[text()='Elements']");
     public static By alertsFramesWindows = By.xpath("//*[text()='Alerts, Frame & Windows']");
     public static By widgets = By.xpath("//*[text()='Widgets']");
+    public static By forms = By.xpath("//*[text()='Forms']");
 
     public static void clickTab(By locator) {
 
         WebElement element = driver().findElement(locator);
+        JavascriptExecutor jsExecutor = (JavascriptExecutor) driver();
+        jsExecutor.executeScript("arguments[0].scrollIntoView(true);", element);
+        element.click();
+    }
+
+    // metoda facuta pentru a da click pe Forms de pe pagina principala
+
+    public static void clickForms() {
+
+        WebElement element = driver().findElement(forms);
         JavascriptExecutor jsExecutor = (JavascriptExecutor) driver();
         jsExecutor.executeScript("arguments[0].scrollIntoView(true);", element);
         element.click();
