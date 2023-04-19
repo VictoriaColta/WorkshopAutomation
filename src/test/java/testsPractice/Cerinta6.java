@@ -34,6 +34,7 @@ public class Cerinta6 {
         LocalDateTime dateInTheFuture = LocalDateTime.now().plusDays(30);
         String dateInTheFutureText = dtf.format(dateInTheFuture);
 
+        //TODO clicka clicka pe datepicker in sine
         datePickerPage.setDate(dateInTheFutureText);
         Assert.assertEquals(datePickerPage.getInputDateValue(), dateInTheFutureText);
 

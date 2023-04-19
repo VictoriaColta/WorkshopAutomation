@@ -31,10 +31,11 @@ public class Cerinta8 {
         DynamicPropertiesPage dynamicPropertiesPage = new DynamicPropertiesPage(driver);
 
         Assert.assertFalse(dynamicPropertiesPage.isEnableAfterEnabled());
+        //TODO in loc de culoare use text-danger
         Assert.assertEquals(dynamicPropertiesPage.getColorChangeTextColor(), "rgba(255, 255, 255, 1)");
         Assert.assertFalse(dynamicPropertiesPage.isVisibleAfterDisplayed());
 
-        Thread.sleep(5000);
+        Thread.sleep(5000);//TODO use explicit wait
 
         Assert.assertTrue(dynamicPropertiesPage.isEnableAfterEnabled());
         Assert.assertEquals(dynamicPropertiesPage.getColorChangeTextColor(), "rgba(228, 100, 112, 1)");
