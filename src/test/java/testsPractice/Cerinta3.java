@@ -7,7 +7,6 @@ import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-import javax.lang.model.element.Element;
 import java.util.List;
 
 
@@ -86,7 +85,9 @@ public class Cerinta3 {
         }
         tableCellsText = tableCellsText.trim();
 
-        String expectedTableValues = "Cierra Vega 39 cierra@example.com 10000 Insurance  Ion Pop 40 test@automation.com 15000 Legal  Mihai Talent 18 mihaita@talent.com 150000 Human Resources";
+        String expectedTableValues = "Cierra Vega 39 cierra@example.com 10000"+
+                " Insurance  Ion Pop 40 test@automation.com 15000 Legal  "
+                +"Mihai Talent 18 mihaita@talent.com 150000 Human Resources";
         Assert.assertEquals(tableCellsText, expectedTableValues);
 
         Application.close();
