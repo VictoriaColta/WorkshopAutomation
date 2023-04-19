@@ -38,10 +38,22 @@ Folosind model/Application.java, sa se deschida aplicatia https://demoqa.com/
                 Step 2: Click pe "Date Picker" din lista
                 Step 3: Sa se adauge o data pentru fiecare input, cu exact 30 de zile in viitor de la momentul rularii
 
+            cerinta_6_2
+                Step 1: Click pe Widgets de pe pagina principala
+                Step 2: Click pe "Date Picker" din lista
+                Step 3: Sa se selecteze o data deschizand datepicker-ul cu denumirea "Select Date"
+                        Sa se creeze un algoritm cu urmatorele cerinte:
+                            - inputul trebuie sa fie de formatul 04/19/2023
+                            - zilele in viitor trebuie sa fie adaugate automat in data
+                            - sa se dea pe sageti in dreapta sau in stanga pana cand luna este cea in cauza (Ex. November 2023)
+                            - sa se selecteze ziua lunii corect, daca 2 numere se repeta, atunci selectati primul numar si verificati daca in
+                            input la atributul value este data corecta ce ati introdus-o ca si input
+                            - sa se repete algoritmul in caz ca ziua lunii nu este corecta
+
             cerinta_7
                 Mapeaza pagina principala https://demoqa.com/, pentru a putea fi usor de mentinut, folosind orice metoda (ex: pom)
 
-            cerinte_8:
+            cerinta_8:
                 Step 1: Click pe Elements de pe pagina principala
                 Step 2: Click pe "Dynamic properties" din lista
                 Step 3: Verificat ca butonul cu textul "Visible After 5 Seconds" apare dupa 5 secunde, inclusiv schimbare culorii de la butonul
