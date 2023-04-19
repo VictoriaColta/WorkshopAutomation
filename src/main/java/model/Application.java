@@ -1,5 +1,6 @@
 package model;
 
+import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -19,14 +20,14 @@ public class Application {
 
     public static void start() {
         //TO DO: Set the path to driver - fill where is necessary
-        System.setProperty("webdriver.chrome.driver", "The location folder of driver.exe");
-
+        //System.setProperty("webdriver.chrome.driver", "The location folder of driver.exe");
+        WebDriverManager.chromedriver().setup();
         ChromeOptions options = new ChromeOptions();
         options.addArguments("start-maximized");
         driver.set(new ChromeDriver(options));
 
         //TO DO: Set the URL
-        driver().get("");
+        driver().get("https://demoqa.com");
 
 
     }

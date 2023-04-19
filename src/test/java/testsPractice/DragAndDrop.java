@@ -1,5 +1,6 @@
 package testsPractice;
 
+import model.Application;
 import org.openqa.selenium.interactions.Actions;
 import org.testng.annotations.Test;
 
@@ -19,7 +20,7 @@ public class DragAndDrop {
     public void dragAndDrop() {
         //Deschidem aplicatia web in browser avand pagina dorita in URL https://demoqa.com/droppable/
 
-
+        Application.start();
 
         //Creeam un obiect din clasa Actions
         Actions actions = new Actions(driver());
