@@ -36,7 +36,38 @@ public class HomePage {
         jsExecutor.executeScript("arguments[0].scrollIntoView(true);", element);
         element.click();
     }
+
+    // metoda facuta pt a da click pe "Elements" de pe pagina principala
+    public static void clickElements() {
+
+        WebElement element = driver().findElement(elements);
+        JavascriptExecutor jsExecutor = (JavascriptExecutor) driver();
+        jsExecutor.executeScript("arguments[0].scrollIntoView(true);", element);
+        element.click();
+    }
+
+    //metoda facuta pt a da click pe AlertsFrameWindows de pe pagina principala
+
+    public static void clickAlertsFrameWindows() {
+
+        WebElement element = driver().findElement(alertsFramesWindows);
+        JavascriptExecutor jsExecutor = (JavascriptExecutor) driver();
+        jsExecutor.executeScript("arguments[0].scrollIntoView(true);", element);
+        element.click();
+    }
+
+
+
+
 }
+
+
+
+
+
+
+
+
 
 // Prima rezolvare
 

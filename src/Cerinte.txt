@@ -1,7 +1,7 @@
 
             Folosind model/Application.java, sa se deschida aplicatia https://the-internet.herokuapp.com/.
 
-            cerinta_1:
+        cerinta_1:
                 Step 1: Click pe Add/Remove Elements de pe pagina principala
                 Step 2: Click pe butonul Add Element
                 Step 3: Sa se verifice display la butonul Delete
@@ -40,3 +40,67 @@ Folosind model/Application.java, sa se deschida aplicatia https://demoqa.com/
 
             cerinta_7
                 Mapeaza pagina principala https://demoqa.com/, pentru a putea fi usor de mentinut, folosind orice metoda (ex: pom)
+
+
+                cerinta_6_2
+                                Step 1: Click pe Widgets de pe pagina principala
+                                Step 2: Click pe "Date Picker" din lista
+                                Step 3: Sa se selecteze o data deschizand datepicker-ul cu denumirea "Select Date"
+                                        Sa se creeze un algoritm cu urmatorele cerinte:
+                                            - inputul trebuie sa fie de formatul 04/19/2023
+                                            - zilele in viitor trebuie sa fie adaugate automat in data
+                                            - sa se dea pe sageti in dreapta sau in stanga pana cand luna este cea in cauza (Ex. November 2023)
+                                            - sa se selecteze ziua lunii corect, daca 2 numere se repeta, atunci selectati primul numar si verificati daca in
+                                            input la atributul value este data corecta ce ati introdus-o ca si input
+                                            - sa se repete algoritmul in caz ca ziua lunii nu este corecta
+
+                            cerinta_7
+                                Mapeaza pagina principala https://demoqa.com/, pentru a putea fi usor de mentinut, folosind orice metoda (ex: pom)
+
+                            cerinta_8:
+                                Step 1: Click pe Elements de pe pagina principala
+                                Step 2: Click pe "Dynamic properties" din lista
+                                Step 3: Verificat ca butonul cu textul "Visible After 5 Seconds" apare dupa 5 secunde, inclusiv schimbare culorii de la butonul
+                                "Color change"
+
+                            cerinta_9:
+                                Step 1: Click pe Alerts, Frame & Windows de pe pagina principala
+                                Step 2: Click pe "Alerts" din lista
+                                Step 3: Dai click pe butonul din dreptul textului "Click Button to see alert"
+                                Step 3: Sa se verifice mesajul de alerta
+                                Step 5: Inchide alerta, si dai click pe urmatorul buton
+                                Step 6: Sa se repete aceeasi pasi pentru fiecare buton, toti pasi trebuie scrisi in acelasi TEST!!!
+
+                            cerinta_10:
+                                Step 1: Click pe Widgets de pe pagina principala
+                                Step 2: Click pe "Accordion" din lista
+                                Step 3: Sa se creeze o metoda prin care se verifica textul dinauntru "Why do we use it?"
+                                Step 4: In test, sa ve face check numai la textul din interior, actiunea de a inchide si deschide accordion-ul
+                                se va face inauntru metodei de getTextWhyDoWeUseIt sau orice denumire doriti.
+
+                            cerinta_11:
+                                Step 1: Click pe Widgets de pe pagina principala
+                                Step 2: Click pe "Slider" din lista
+                                Step 3: Muta slider-ul la 40, asteapta 3 secunde (puteti folosi thread.sleep) - Important pentru demo
+                                Step 4: Verifica valoare de input ca este egal cu 40
+                                Step 5: Repeta pasul 3 si 4 pentru valorile, 80, 30, 20, 99, 5, 15, 10
+
+                            cerinta_12:
+                                Step 1: Click pe Interactions de pe pagina principala
+                                Step 2: Click pe "Sortable" din lista
+                                Step 3: Sorteaza lista in formatul urmator Six, One, Five, Three, Four, Two
+
+                            cerinta_13:
+                                Step 1: Click pe Interactions de pe pagina principala
+                                Step 2: Click pe "Sortable" din lista
+                                Step 3: Click pe "Grid" din lista
+                                Step 4: Sorteaza grid-ul in formatul urmator:
+                                    Nine    Six     Eight
+                                    Two     Three   Five
+                                    One     Four    Seven
+
+                            cerinta_14:
+                                Step 1: Click pe Interactions de pe pagina principala
+                                Step 2: Click pe "Selectable" din lista
+                                Step 3: Click pe grid
+                                Step 4: Sa se dea click pe casutele de pe diagonala principala intr-un mod automat

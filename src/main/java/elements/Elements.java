@@ -13,12 +13,21 @@ public class Elements {
     public static By textBox = By.xpath("(//li[@id='item-0'])[1]");
     public static By webTables = By.xpath("//span[text()='Web Tables']");
     public static By uploadAndDownload = By.xpath("//span[text()='Upload and Download']");
+    public static By dynamicProperties = By.xpath("//span[text()='Dynamic Properties']");
 
     public static void click(By locator) {
 
         WebElement tabFromElements = driver().findElement(locator);
         tabFromElements.click();
 
+    }
+
+    // metoda pentru a da click pe Dynamic Properties din "Elemenets" section
+
+    public static void clickDynamicProperties() {
+
+        WebElement element = driver().findElement(dynamicProperties);
+        element.click();
     }
 
 }
