@@ -24,7 +24,9 @@ public class Alerts {
     public static By alertButton = By.id("alertButton");
     public static By timerAlertButton = By.id("timerAlertButton");
     public static By confirmButton = By.id("confirmButton");
-    public static By verifyThirdAlertMessage = By.id("confirmResult'");
+    public static By verifyThirdAlertMessage = By.xpath("//span[text()='Cancel']");
+    public static By promtButton = By.id("promtButton");
+    public static By promptResult = By.id("promptResult");
 
 // click pe primul buton de alerta
     public static void clickFirstAlertButton() {
@@ -71,7 +73,7 @@ public class Alerts {
         element.click();
     }
 
-    // pt a verifica al treilea mesaj de alerta si a da click pe "Cancel" button + assert ca am dat click pe Cancel si nu pe Ok
+    // pt a verifica al treilea mesaj de alerta si a da click pe "Cancel" button
 
     public static void getThirdAlertMessage() {
 
@@ -80,12 +82,41 @@ public class Alerts {
         Assert.assertTrue(alertMessage.contains("Do you confirm action?"));
         alert.dismiss(); // pt a da click pe cancel button
     }
+//     assert mesajului ce apare pe UI, pt a demonstra  ca am dat click pe "Cancel" si nu pe "Ok"
+
+    public static void verifyMessage(){
 
 
+        WebElement element = driver().findElement(verifyThirdAlertMessage);
+        String message = element.getText();
+        Assert.assertTrue(message.contains("Cancel"));
+    }
 
+    //click pe al patrulea buton de alerta
 
+    public static void clickFourthAlertButton() {
 
+        WebElement element = driver().findElement(promtButton);
+        element.click();
+    }
 
+    // introduc input in field-ul care se afiseaza in pop-up-ul de alerta
+
+    public static void sendInputAlertField(String value) {
+
+        Alert alert = driver().switchTo().alert();
+        alert.sendKeys(value);
+        alert.accept();
+
+    }
+
+    // verific daca mesajul ce apare pe UI contine input-ul pe care l-am trimis in metoda de mai sus
+
+    public static void verifyInput() {
+
+        WebElement element = driver().findElement(promptResult);
+        Assert.assertTrue(element.getText().contains("Niculescu Diana Elena"));
+    }
 
 
 }

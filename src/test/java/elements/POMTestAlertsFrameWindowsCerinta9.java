@@ -12,7 +12,6 @@ package elements;
 
 import model.ApplicationNumberTwo;
 import model.HomePage;
-import org.testng.Assert;
 import org.testng.annotations.Test;
 
 public class POMTestAlertsFrameWindowsCerinta9 {
@@ -30,11 +29,11 @@ public class POMTestAlertsFrameWindowsCerinta9 {
         Alerts.getSecondAlertMessage();
         Alerts.clickThirdAlertButton();
         Alerts.getThirdAlertMessage();
-
-
-
-
-
+        Alerts.verifyMessage();
+        Alerts.clickFourthAlertButton();
+        Alerts.sendInputAlertField("Niculescu Diana Elena");
+        Alerts.verifyInput();
+        ApplicationNumberTwo.close();
 
     }
 
