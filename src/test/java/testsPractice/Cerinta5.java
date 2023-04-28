@@ -1,4 +1,5 @@
 package testsPractice;
+
 import Utils.Drivers;
 import elements.AlertsFrameWindows;
 import elements.Elements;
@@ -12,10 +13,10 @@ import org.testng.annotations.Test;
 
 public class Cerinta5 {
     @Test
-    public void testCerinta5() throws Exception {
+    public void testCerinta5() {
         Drivers.startDriver();
         Elements.alertsFrameWindows();
-        AlertsFrameWindows.frames();
+        AlertsFrameWindows.saveTextFromIframes();
 
 
     }

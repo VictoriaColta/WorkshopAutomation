@@ -1,7 +1,9 @@
 package testsPractice;
+
 import Utils.Drivers;
 import elements.Elements;
 import elements.UploadAndDownload;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
 //    cerinta_4
@@ -12,10 +14,11 @@ import org.testng.annotations.Test;
 public class Cerinta4 {
 
     @Test
-    public void testCerinta4() throws Exception {
+    public void testCerinta4() {
         Drivers.startDriver();
         Elements.openElementsPage();
         UploadAndDownload.openUploadAndDownload();
+        Assert.assertTrue(UploadAndDownload.isFileLoaded());
 
     }
 

@@ -9,9 +9,5 @@ public class TestData {
     public static String salary = "15000";
     public static String department = "Legal";
 
-    public static String firstDate = "";
-
-    public static String secondDate = "";
-
 
 }

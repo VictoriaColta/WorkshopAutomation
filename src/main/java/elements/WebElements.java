@@ -1,6 +1,8 @@
 package elements;
-import Utils.GeneralMethods;
+
+import Utils.ElementHandler;
 import org.openqa.selenium.By;
+
 
 public class WebElements {
 
@@ -16,69 +18,41 @@ public class WebElements {
     public static By addRecordButton = By.xpath("//button[@id='addNewRecordButton']");
 
 
-    public static void openEditMode  (){
-        GeneralMethods.clickElement(editRow2);
-
-    }
-    public static void editFirstName (String name) throws InterruptedException {
-        GeneralMethods.clickElement(firstName);
-        GeneralMethods.clearText(firstName);
-        GeneralMethods.sendTextToElement(name, firstName );
+    public static void submit() {
+        ElementHandler.clickElement(submitButton);
 
     }
 
-    public static void editLastName (String name) throws InterruptedException {
-        GeneralMethods.clickElement(lastName);
-        GeneralMethods.clearText(lastName);
-        GeneralMethods.sendTextToElement(name, lastName );
+    public static void deleteRecord() {
+        ElementHandler.clickElement(deleteRecordButton);
 
     }
 
-    public static void editAge (String userAge) throws InterruptedException {
-        GeneralMethods.clickElement(age);
-        GeneralMethods.clearText(age);
-        GeneralMethods.sendTextToElement(userAge, age );
-
-    }
-    public static void editEmail (String userEmail) throws InterruptedException {
-        GeneralMethods.clickElement(email);
-        GeneralMethods.clearText(email);
-        GeneralMethods.sendTextToElement(userEmail, email );
-
-    }
-    public static void editSalary (String userSalary) throws InterruptedException {
-        GeneralMethods.clickElement(salary);
-        GeneralMethods.clearText(salary);
-        GeneralMethods.sendTextToElement(userSalary, salary );
-
-    }
-    public static void editDepartment (String userDepartment) throws InterruptedException {
-        GeneralMethods.clickElement(department);
-        GeneralMethods.clearText(department);
-        GeneralMethods.sendTextToElement(userDepartment, department);
+    public static void editSecondRow(String v1, String v2, String v3, String userAge, String userSalary, String userDepartment) {
+        ElementHandler.clickElement(editRow2);
+        ElementHandler.sendTextToElement(v1, firstName);
+        ElementHandler.sendTextToElement(v2, lastName);
+        ElementHandler.sendTextToElement(v3, email);
+        ElementHandler.sendTextToElement(userAge, age);
+        ElementHandler.sendTextToElement(userSalary, salary);
+        ElementHandler.sendTextToElement(userDepartment, department);
 
     }
 
-    public static void submit () throws InterruptedException {
-        GeneralMethods.clickElement(submitButton);
+    public static void addNewRecord(String name1, String name2, String userEmail, String userAge, String userSalary, String userDepartment) {
 
-    }
-    public static void deleteRecord () throws InterruptedException {
-        GeneralMethods.clickElement(deleteRecordButton);
-
-    }
-
-    public static void addNewRecord (String name1, String name2, String userEmail, String userAge, String userSalary, String userDepartment) {
-        GeneralMethods.clickElement(addRecordButton);
-        GeneralMethods.sendTextToElement(name1, firstName);
-        GeneralMethods.sendTextToElement(name2, lastName);
-        GeneralMethods.sendTextToElement(userEmail, email);
-        GeneralMethods.sendTextToElement(userAge, age);
-        GeneralMethods.sendTextToElement(userSalary, salary);
-        GeneralMethods.sendTextToElement(userDepartment, department);
+        ElementHandler.clickElement(addRecordButton);
+        ElementHandler.sendTextToElement(name1, firstName);
+        ElementHandler.sendTextToElement(name2, lastName);
+        ElementHandler.sendTextToElement(userEmail, email);
+        ElementHandler.sendTextToElement(userAge, age);
+        ElementHandler.sendTextToElement(userSalary, salary);
+        ElementHandler.sendTextToElement(userDepartment, department);
 
     }
 
-
+    public static boolean isRowDeleted() {
+        return ElementHandler.elementVisibilityValidation(deleteRecordButton);
+    }
 
 }

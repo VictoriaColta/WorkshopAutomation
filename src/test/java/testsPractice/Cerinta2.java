@@ -1,4 +1,5 @@
 package testsPractice;
+
 import Utils.Drivers;
 import elements.CheckBox;
 import elements.Elements;
@@ -12,11 +13,10 @@ import org.testng.annotations.Test;
 //    Step 4: Click pe checkbox-ul aferent "Desktop"
 //    Step 5: Sa se salveze textul generat de checkbox-ul selectat intr-o variabila, apoi afisata in consola
 
-
 public class Cerinta2 {
 
     @Test
-    public void testCerinta2() throws Exception {
+    public void testCerinta2() {
         Drivers.startDriver();
         Elements.openElementsPage();
         CheckBox.openCheckBox();

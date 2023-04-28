@@ -1,4 +1,5 @@
 package testsPractice;
+
 import Utils.Drivers;
 import elements.Elements;
 import elements.Widgets;
@@ -13,12 +14,12 @@ import org.testng.annotations.Test;
 public class Cerinta6 {
 
     @Test
-    public void testCerinta6() throws Exception {
+    public void testCerinta6() {
         Drivers.startDriver();
         Elements.widgets();
         Widgets.datePicker();
         Widgets.selectDate();
-;
+        //Assert.assertTrue(); to do => check if date is correct selected
 
     }
 

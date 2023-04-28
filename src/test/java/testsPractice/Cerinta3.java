@@ -1,8 +1,10 @@
 package testsPractice;
+
 import Utils.Drivers;
 import Utils.TestData;
 import elements.Elements;
 import elements.WebElements;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
 //    cerinta_3
@@ -12,25 +14,19 @@ import org.testng.annotations.Test;
 //    Step 4: Sa se stearga al 3lea rand din tabel
 //    Step 5: Adauga o noua linie in tabel cu orice valori
 
-
 public class Cerinta3 {
 
     @Test
-    public void testCerinta3() throws Exception {
+    public void testCerinta3() {
         Drivers.startDriver();
         Elements.openElementsPage();
         Elements.openWebTables();
-        WebElements.openEditMode();
-        WebElements.editFirstName(TestData.firstName);
-        WebElements.editLastName(TestData.lastName);
-        WebElements.editEmail(TestData.email);
-        WebElements.editAge(TestData.age);
-        WebElements.editSalary(TestData.salary);
-        WebElements.editDepartment(TestData.department);
+        WebElements.editSecondRow(TestData.firstName, TestData.lastName, TestData.email, TestData.age, TestData.salary, TestData.department);
         WebElements.submit();
         WebElements.deleteRecord();
-        WebElements.addNewRecord(TestData.firstName, TestData.lastName, TestData.email, TestData.age, TestData.salary,TestData.department);
+        WebElements.addNewRecord(TestData.firstName, TestData.lastName, TestData.email, TestData.age, TestData.salary, TestData.department);
         WebElements.submit();
+        Assert.assertTrue(WebElements.isRowDeleted());
     }
 
 
