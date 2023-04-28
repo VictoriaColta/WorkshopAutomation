@@ -1,16 +1,14 @@
 package elements;
 
 
-
-
 // cerinta_8:
 //Step 1: Click pe Elements de pe pagina principala
 //Step 2: Click pe "Dynamic properties" din lista
 //Step 3: Verificat ca butonul cu textul "Visible After 5 Seconds" apare dupa 5 secunde, inclusiv schimbare culorii de la butonul
 //"Color change"
 
-import org.apache.hc.core5.util.Asserts;
 import org.openqa.selenium.By;
+import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -24,19 +22,45 @@ public class DynamicProperties {
     public static By colorChangeButton = By.xpath("//button[@class='mt-4 text-danger btn btn-primary']");
 
     // metoda care verifica daca butonul va aparea in 5 secunde. Am folosit Explicit wait.
-    public static void checkVisibleAfterFiveSecondsButton() {
 
-        WebDriverWait wait = new WebDriverWait(driver(), 5);
-        wait.until(ExpectedConditions.visibilityOfElementLocated(visibleAfterButton));
+    public static boolean isFiveSecondsButtonVisibleAfter(int value) {
+
+        WebDriverWait wait = new WebDriverWait(driver(), value);
+
+        try {
+            wait.until(ExpectedConditions.visibilityOfElementLocated(visibleAfterButton));
+
+        } catch (TimeoutException exception) {
+
+            return false;
+        }
+        return true;
+
     }
 
-    public static void checkColorChange () {
+    public static boolean isColorChanged() {
 
         WebElement element = driver().findElement(colorChangeButton);
-        Assert.assertTrue(element.getAttribute("class").contains("text-danger"));
+        String elementClass = element.getAttribute("class");
+        return elementClass.contains("text-danger");
+
+// returnul de mai sus poate fi scris si asa :
+// return element.getAttribute("class").contains("text-danger");
+
     }
 
 }
+
+//cand asteptam sa se returneze o valoare (boolean,int etc) folosim blocul de try0catch. In try verificam vizibilitatea, daca  nu ,se va duce
+// pe cazul  "catch". La final punem return "true"
+// return opreste executia metodei
+
+// metoda "until" - arunca exceptiA "Timeout Exception" daca nu gaseste elementul dupa ce trec nr de secunde specificate
+// in "try" pun apelurile de metode care pot arunca exceptii
+
+
+// vizibilitatea unui buton pe loc: folosim exceptii
+//         mai multe exceptii, mai multe blocuri de catch
 
 
 
@@ -62,7 +86,6 @@ public class DynamicProperties {
 //
 //        Color color2 = new Color(r, g, b, a);
 //        System.out.println(color2.asHex());
-
 
 
 //        Color colorChangeButton = Color.fromString(driver().findElement(By.id("colorChange")).getCssValue("color"));

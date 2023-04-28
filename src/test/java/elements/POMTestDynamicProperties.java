@@ -16,13 +16,13 @@ public class POMTestDynamicProperties {
 
     @Test
 
-    public static void testPOMDynamicPRoperties() {
+    public static void testPOMDynamicProperties() {
 
         ApplicationNumberTwo.start();
         HomePage.clickElements();
         Elements.clickDynamicProperties();
-        DynamicProperties.checkVisibleAfterFiveSecondsButton();
-        DynamicProperties.checkColorChange();
+        Assert.assertTrue(DynamicProperties.isFiveSecondsButtonVisibleAfter(5));
+        Assert.assertTrue(DynamicProperties.isColorChanged());
         ApplicationNumberTwo.close();
 
     }

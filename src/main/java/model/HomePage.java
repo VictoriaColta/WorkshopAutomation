@@ -19,6 +19,7 @@ public class HomePage {
     public static By widgets = By.xpath("//*[text()='Widgets']");
     public static By forms = By.xpath("//*[text()='Forms']");
 
+
     public static void clickTab(By locator) {
 
         WebElement element = driver().findElement(locator);
@@ -56,8 +57,13 @@ public class HomePage {
         element.click();
     }
 
+    public static void clickWidgets() {
 
-
+        WebElement element = driver().findElement(widgets);
+        JavascriptExecutor jsExecutor = (JavascriptExecutor) driver();
+        jsExecutor.executeScript("arguments[0].scrollIntoView(true);", element);
+        element.click();
+    }
 
 }
 

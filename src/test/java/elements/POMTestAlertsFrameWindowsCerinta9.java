@@ -12,6 +12,7 @@ package elements;
 
 import model.ApplicationNumberTwo;
 import model.HomePage;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
 public class POMTestAlertsFrameWindowsCerinta9 {
@@ -24,15 +25,15 @@ public class POMTestAlertsFrameWindowsCerinta9 {
         HomePage.clickAlertsFrameWindows();
         AlertsFrameWindowsCerinta9.clickAlerts();
         Alerts.clickFirstAlertButton();
-        Alerts.getFirstAlertMessage();
+        Assert.assertTrue(Alerts.getFirstAlertMessage().contains("You clicked a button"));
         Alerts.clickSecondAlertButton();
-        Alerts.getSecondAlertMessage();
+        Assert.assertTrue(Alerts.getSecondAlertMessage().contains("This alert appeared after 5 seconds"));
         Alerts.clickThirdAlertButton();
-        Alerts.getThirdAlertMessage();
-        Alerts.verifyMessage();
+        Assert.assertTrue(Alerts.getThirdAlertMessage().contains("Do you confirm action?"));
+        Assert.assertTrue(Alerts.getMessageAfterCancelingThirdAlert().contains("Cancel"));
         Alerts.clickFourthAlertButton();
         Alerts.sendInputAlertField("Niculescu Diana Elena");
-        Alerts.verifyInput();
+        Assert.assertTrue(Alerts.getMessageAfterSendingInput().contains("Niculescu Diana Elena"));
         ApplicationNumberTwo.close();
 
     }

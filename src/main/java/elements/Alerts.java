@@ -4,7 +4,6 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import org.testng.Assert;
 
 import static model.ApplicationNumberTwo.driver;
 
@@ -28,20 +27,23 @@ public class Alerts {
     public static By promtButton = By.id("promtButton");
     public static By promptResult = By.id("promptResult");
 
-// click pe primul buton de alerta
+
+
+    // click pe primul buton de alerta
     public static void clickFirstAlertButton() {
 
         WebElement element = driver().findElement(alertButton);
         element.click();
+
     }
 
-    //metoda pt a verifica mesajul de alerta + a apasa "ok" pe alerta
-    public static void getFirstAlertMessage() {
+    //metoda ce verifica primul mesaj de alerta "You clicked a button"
+    public static String getFirstAlertMessage() {
 
         Alert alert = driver().switchTo().alert();
         String alertMessage = driver().switchTo().alert().getText();
-        Assert.assertTrue(alertMessage.contains("You clicked a button"));
         alert.accept(); // pt a apasa ok pe alerta- a inchide fereastra
+        return alertMessage;
 
     }
 
@@ -53,19 +55,20 @@ public class Alerts {
         element.click();
     }
 
-    //metoda pt a verifica mesajul al doilea de alerta + a apasa "ok" pe alerta
+    //metoda ce verifica mesajul al doilea de alerta "This alert appeared after 5 seconds"
 
-    public static void getSecondAlertMessage() {
+    public static String getSecondAlertMessage() {
 
         WebDriverWait wait = new WebDriverWait(driver(),5);
         wait.until(ExpectedConditions.alertIsPresent());
 
         Alert alert = driver().switchTo().alert();
         String alertMessage = driver().switchTo().alert().getText();
-        Assert.assertTrue(alertMessage.contains("This alert appeared after 5 seconds"));
-        alert.accept();
+        alert.accept();// pt a apasa ok pe alerta- a inchide fereastra
+        return alertMessage;
     }
-    //click pe al doilea buton de alerta
+
+    //click pe al treilea buton de alerta
 
     public static void clickThirdAlertButton() {
 
@@ -73,23 +76,22 @@ public class Alerts {
         element.click();
     }
 
-    // pt a verifica al treilea mesaj de alerta si a da click pe "Cancel" button
+    // metoda ce verifica al treilea mesaj de alerta "Do you confirm action?"
 
-    public static void getThirdAlertMessage() {
+    public static String getThirdAlertMessage() {
 
         Alert alert = driver().switchTo().alert();
         String alertMessage = driver().switchTo().alert().getText();
-        Assert.assertTrue(alertMessage.contains("Do you confirm action?"));
         alert.dismiss(); // pt a da click pe cancel button
+        return alertMessage;
     }
-//     assert mesajului ce apare pe UI, pt a demonstra  ca am dat click pe "Cancel" si nu pe "Ok"
 
-    public static void verifyMessage(){
+    //metoda ce verifica faptul ca am dat click pe "Cancel" si nu pe "Ok"
 
+    public static String getMessageAfterCancelingThirdAlert(){
 
         WebElement element = driver().findElement(verifyThirdAlertMessage);
-        String message = element.getText();
-        Assert.assertTrue(message.contains("Cancel"));
+        return element.getText();
     }
 
     //click pe al patrulea buton de alerta
@@ -100,7 +102,7 @@ public class Alerts {
         element.click();
     }
 
-    // introduc input in field-ul care se afiseaza in pop-up-ul de alerta
+    // metoda ce introduce input in field-ul care se afiseaza in pop-up-ul de alerta
 
     public static void sendInputAlertField(String value) {
 
@@ -110,13 +112,11 @@ public class Alerts {
 
     }
 
-    // verific daca mesajul ce apare pe UI contine input-ul pe care l-am trimis in metoda de mai sus
+    // metoda ce verifica daca mesajul ce apare pe UI contine input-ul pe care l-am trimis in metoda de mai sus
 
-    public static void verifyInput() {
+    public static String getMessageAfterSendingInput() {
 
         WebElement element = driver().findElement(promptResult);
-        Assert.assertTrue(element.getText().contains("Niculescu Diana Elena"));
+        return element.getText();
     }
-
-
 }
