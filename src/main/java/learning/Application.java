@@ -1,11 +1,10 @@
-package model;
+package learning;
 
-import org.openqa.selenium.JavascriptExecutor;
+import io.github.bonigarcia.wdm.WebDriverManager;
+import learning.model.pages.Welcome;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
-import org.openqa.selenium.firefox.FirefoxDriver;
 
 public class Application {
 //TO DO
@@ -17,16 +16,14 @@ public class Application {
     }
 
     public static void start() {
-        //TO DO: Set the path to driver - fill where is necessary
-        System.setProperty("webdriver.chrome.driver", "C:\\ProgramData\\chocolatey\\lib\\chromedriver\\tools\\chromedriver.exe");
+//        System.setProperty("webdriver.chrome.driver", "C:\\tools\\selenium\\chromedriver.exe");
 
+        WebDriverManager.chromedriver().setup();
         ChromeOptions options = new ChromeOptions();
         options.addArguments("start-maximized");
         driver.set(new ChromeDriver(options));
-
-
-
     }
+
 
     public static void close() {
         driver().quit();

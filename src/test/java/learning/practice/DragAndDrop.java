@@ -1,17 +1,15 @@
-package testsPractice;
+package learning.practice;
 
-import model.Application;
+import learning.Application;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
-import org.openqa.selenium.remote.session.StripAnyPlatform;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.Test;
 
 import static java.lang.Thread.sleep;
-import static model.Application.driver;
 
 public class DragAndDrop {
     /**
