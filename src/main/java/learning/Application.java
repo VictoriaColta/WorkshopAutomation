@@ -1,7 +1,6 @@
 package learning;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
-import learning.model.pages.Welcome;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
