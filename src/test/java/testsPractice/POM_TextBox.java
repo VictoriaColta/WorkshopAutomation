@@ -1,6 +1,6 @@
 package testsPractice;
 import elements.Elements;
-import elements.HomePageElements;
+import elements.HomePage;
 import elements.TextBox;
 import model.SecondApplication;
 import org.testng.annotations.Test;
@@ -9,7 +9,7 @@ public class POM_TextBox {
     @Test
     public void testPOM()  {
         SecondApplication.start();
-        HomePageElements.clickOnElementsSection();
+        HomePage.clickOnElementsSection();
         Elements.validateTextBoxDisplayed();
         Elements.clickTextBox();
         TextBox.setFullName("James Bond");

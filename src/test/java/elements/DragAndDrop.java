@@ -6,7 +6,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 
-public class DragAndDropElements {
+public class DragAndDrop {
     private static By dragAndDropPageElement = By.xpath("//a[normalize-space()='Drag and Drop']");
     private static By draggableElement = By.id("column-a");
     private static By droppableElement = By.id("column-b");

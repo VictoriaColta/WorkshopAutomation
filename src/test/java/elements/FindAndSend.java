@@ -10,7 +10,7 @@ import org.testng.annotations.Test;
 
 import static model.Application.driver;
 
-public class FindAndSendElements {
+public class FindAndSend {
     private static By basicAuthPageElement = By.xpath("//a[normalize-space()='Basic Auth']");
     private static By userNameElement = By.xpath("//input[@id='userName']");
     private static By passWordElement = By.xpath("//input[@id='password']");

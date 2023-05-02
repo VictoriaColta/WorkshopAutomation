@@ -10,7 +10,7 @@ import java.io.File;
 
 import static model.SecondApplication.driver;
 
-public class UploadAndDownloadElements {
+public class UploadAndDownload {
 
     public static File fileLocation = new File ("C:\\Users\\andreea.gheban\\OneDrive - Fortech srl\\Desktop\\fisierZip.zip");
     public static File fisierZip = new File(String.valueOf(fileLocation));

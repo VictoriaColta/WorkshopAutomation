@@ -1,8 +1,8 @@
 package testsPractice;
 
 import elements.Elements;
-import elements.HomePageElements;
-import elements.UploadAndDownloadElements;
+import elements.HomePage;
+import elements.UploadAndDownload;
 import model.SecondApplication;
 import org.testng.annotations.Test;
 
@@ -17,17 +17,17 @@ public class POM_UploadAndDownload {
     @Test
     public void testPOM() {
         SecondApplication.start();
-        HomePageElements.clickOnElementsSection();
+        HomePage.clickOnElementsSection();
 
 //    Step 2:
         Elements.clickUploadsAndDownloads();
 
 
-        UploadAndDownloadElements.uploadFileDisplayed();
+        UploadAndDownload.uploadFileDisplayed();
 //    Step 3:
 
-        UploadAndDownloadElements.clickUploadFile();
-        UploadAndDownloadElements.uploadFile();
+        UploadAndDownload.clickUploadFile();
+        UploadAndDownload.uploadFile();
 
         SecondApplication.close();
     }

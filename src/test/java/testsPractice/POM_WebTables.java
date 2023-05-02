@@ -1,8 +1,8 @@
 package testsPractice;
 import elements.Elements;
-import elements.HomePageElements;
+import elements.HomePage;
 
-import elements.WebTablesElements;
+import elements.WebTables;
 import model.SecondApplication;
 import org.testng.annotations.Test;
 
@@ -17,23 +17,23 @@ public class POM_WebTables {
     @Test
     public void testPOM() {
         SecondApplication.start();
-        HomePageElements.clickOnElementsSection();
+        HomePage.clickOnElementsSection();
         Elements.clickWebTables();
 
 //        Step 3:
-        WebTablesElements.clickSecondEditButton();
-        WebTablesElements.setFirstNameField("Ion");
-        WebTablesElements.setLastNameField("Pop");
-        WebTablesElements.setEmailField("test@automation.com");
-        WebTablesElements.setSalaryField("15000");
-        WebTablesElements.setDepartmentField("Legal");
-        WebTablesElements.clickSubmitButton();
+        WebTables.clickSecondEditButton();
+        WebTables.setFirstNameField("Ion");
+        WebTables.setLastNameField("Pop");
+        WebTables.setEmailField("test@automation.com");
+        WebTables.setSalaryField("15000");
+        WebTables.setDepartmentField("Legal");
+        WebTables.clickSubmitButton();
 
 //       Step 4:
-        WebTablesElements.clickDeleteThirdButton();
+        WebTables.clickDeleteThirdButton();
 
 //       Step 5:
-        WebTablesElements.clickAddButton();
+        WebTables.clickAddButton();
 
         SecondApplication.close();
     }

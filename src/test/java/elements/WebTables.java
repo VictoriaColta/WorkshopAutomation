@@ -4,7 +4,7 @@ import static model.SecondApplication.driver;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 
-public class WebTablesElements {
+public class WebTables {
     private static By secondEditButtonElement = By.xpath("//span[@id='edit-record-2']");
 
     private static By firstNameFieldElement = By.xpath("//input[@id='firstName']");

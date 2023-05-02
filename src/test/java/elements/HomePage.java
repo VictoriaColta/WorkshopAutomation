@@ -7,7 +7,7 @@ import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 
 import static model.SecondApplication.driver;
-public class HomePageElements {
+public class HomePage {
     private static By elementsSectionElement = By.xpath("//h5[normalize-space()='Elements']");
     private static By formsSectionElement = By.xpath("//h5[normalize-space()='Forms']");
     private static By alertsFrameWindowsSectionElement = By.xpath("//h5[normalize-space()='Alerts, Frame & Windows']");
@@ -15,9 +15,14 @@ public class HomePageElements {
     private static By interactionsButtonElement = By.xpath("//h5[normalize-space()='Interactions']");
     private static By bookStoreApplicationButtonElement = By.xpath(" //h5[normalize-space()='Book Store Application']");
     private static By allSectionElement = By.className("home-body");
+    public static By alertsFramesWindows = By.xpath("//*[text()='Alerts, Frame & Windows']");
+
+
     public static void clickOnElementsSection() {
 
         WebElement elements = SecondApplication.driver().findElement(elementsSectionElement);
+        JavascriptExecutor jsExecutor = (JavascriptExecutor) driver();
+        jsExecutor.executeScript("arguments[0].scrollIntoView(true);", elements);
         elements.click();
 
     }
@@ -54,5 +59,12 @@ public class HomePageElements {
         //JavascriptExecutor clasa, jsExecutor e obiect al clasei
         jsExecutor.executeScript("arguments[0].scrollIntoView(true);", bookStoreApplicationSection);
         bookStoreApplicationSection.click();
+    }
+    public static void clickAlertsFrameWindows() {
+
+        WebElement element = driver().findElement(alertsFramesWindows);
+        JavascriptExecutor jsExecutor = (JavascriptExecutor) driver();
+        jsExecutor.executeScript("arguments[0].scrollIntoView(true);", element);
+        element.click();
     }
 }

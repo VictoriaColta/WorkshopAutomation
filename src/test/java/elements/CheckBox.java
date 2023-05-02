@@ -6,7 +6,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 
-public class CheckBoxElements {
+public class CheckBox {
 
     private static By checkBoxSectionElement = By.xpath("//span[normalize-space()='Check Box']");
     private static By expandHomeArrowElement = By.className("rct-icon rct-icon-expand-clos");

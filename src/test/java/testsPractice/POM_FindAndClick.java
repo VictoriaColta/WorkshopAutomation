@@ -1,6 +1,6 @@
 package testsPractice;
 
-import elements.FindAndClickElements;
+import elements.FindAndClick;
 import model.Application;
 import org.testng.annotations.Test;
 
@@ -11,22 +11,22 @@ public class POM_FindAndClick {
         Application.start();
 
 //        Step 1: Click pe Add/Remove Elements de pe pagina principala
-        FindAndClickElements.clickElementFromTextBox();
+        FindAndClick.clickElementFromTextBox();
 
 //        Step 2: Click pe butonul Add Element
-        FindAndClickElements.clickAddElement();
+        FindAndClick.clickAddElement();
 
 //        add another element button
-        FindAndClickElements.clickAddElement();
+        FindAndClick.clickAddElement();
 
 //      Step 3: Sa se verifice display la butonul Delete
-        FindAndClickElements.deleteButtonIsDisplayed();
+        FindAndClick.deleteButtonIsDisplayed();
 
 //        Step 4: Click pe button Delete
-        FindAndClickElements.clickDeleteButton();
+        FindAndClick.clickDeleteButton();
 
 //        Step 4: Click pe button Delete
-        FindAndClickElements.deleteButtonIsNotDisplayed();
+        FindAndClick.deleteButtonIsNotDisplayed();
 
 
         Application.close();

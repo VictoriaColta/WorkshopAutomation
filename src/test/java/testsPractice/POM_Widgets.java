@@ -1,7 +1,7 @@
 package testsPractice;
 
-import elements.HomePageElements;
-import elements.WidgetsElements;
+import elements.HomePage;
+import elements.Widgets;
 import model.SecondApplication;
 import org.testng.annotations.Test;
 
@@ -16,20 +16,20 @@ public class POM_Widgets {
         SecondApplication.start();
 
 //        Step 1:
-        HomePageElements.clickWidgetsSection();
+        HomePage.clickWidgetsSection();
 //        Step 2:
-        WidgetsElements.clickDatePickerButton();
+        Widgets.clickDatePickerButton();
 
         //                Step 3:
-        WidgetsElements.selectDateOnFirstInput();
-        WidgetsElements.clickDateAndTimeLabel();
+        Widgets.selectDateOnFirstInput();
+        Widgets.clickDateAndTimeLabel();
 
-       WidgetsElements.selectDateAndTimePicker();
+       Widgets.selectDateAndTimePicker();
 
-        WidgetsElements.clickDateAndTimeLabel();
+        Widgets.clickDateAndTimeLabel();
 
-        WidgetsElements.validateSelectedDate();
-       WidgetsElements.validateDateAndTimePicker();
+        Widgets.validateSelectedDate();
+       Widgets.validateDateAndTimePicker();
 
        SecondApplication.close();
     }

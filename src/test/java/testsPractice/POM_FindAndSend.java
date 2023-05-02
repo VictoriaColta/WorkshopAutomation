@@ -1,8 +1,6 @@
 package testsPractice;
 
-import elements.ABTestngPageElements;
-import elements.FindAndClickElements;
-import elements.FindAndSendElements;
+import elements.FindAndSend;
 import model.Application;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.Test;
@@ -13,12 +11,12 @@ public class POM_FindAndSend {
         Application.start();
         WebDriver driver = Application.driver();
         driver.get("https://demoqa.com/login");
-        FindAndSendElements.printUserName();
-        FindAndSendElements.userNameIsDisplayed();
-        FindAndSendElements.sendUserName("Ana");
-        FindAndSendElements.sendAnotherUserName();
-        FindAndSendElements.sendPassword();
-        FindAndSendElements.clickLoginButton();
+        FindAndSend.printUserName();
+        FindAndSend.userNameIsDisplayed();
+        FindAndSend.sendUserName("Ana");
+        FindAndSend.sendAnotherUserName();
+        FindAndSend.sendPassword();
+        FindAndSend.clickLoginButton();
 
         Application.close();
     }

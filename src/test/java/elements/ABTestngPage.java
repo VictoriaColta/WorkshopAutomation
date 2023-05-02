@@ -5,7 +5,7 @@ import org.openqa.selenium.WebElement;
 
 import static model.Application.driver;
 
-public class ABTestngPageElements {
+public class ABTestngPage {
     // locators
     private static final By abTestingPageElement = By.xpath("//a[normalize-space()='A/B Testing']");
     private static final By titleElement = By.xpath("//h3[normalize-space()='A/B Test Variation 1']");

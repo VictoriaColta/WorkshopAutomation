@@ -7,7 +7,7 @@ import org.testng.Assert;
 
 import static model.SecondApplication.driver;
 
-public class WidgetsElements {
+public class Widgets {
     private static By datePickerButtonElement = By.xpath("//span[normalize-space()='Date Picker']");
     private static By datePickerMonthYearInputElement = By.xpath("//input[@id='datePickerMonthYearInput']");
     private static By dateAndTimePickerInputElement = By.id("dateAndTimePickerInput");

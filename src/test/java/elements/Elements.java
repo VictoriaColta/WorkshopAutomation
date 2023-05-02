@@ -7,10 +7,11 @@ import org.testng.Assert;
 import static model.SecondApplication.driver;
 public class Elements {
     // locators
-    private static By textBoxElement = By.xpath("(//li[@id='item-0'])[1]");
-    private static By checkBoxElement = By.xpath("(//li[@id ='item-1'])[1]");
-    private static By webTablesElement = By.xpath("(//li[@id ='item-3'])[1]");
-    private static By uploadsAndDownloadsElement = By.id("item-7");
+    private static final By textBoxElement = By.xpath("(//li[@id='item-0'])[1]");
+    private static final By checkBoxElement = By.xpath("(//li[@id ='item-1'])[1]");
+    private static final By webTablesElement = By.xpath("(//li[@id ='item-3'])[1]");
+    private static final By uploadsAndDownloadsElement = By.id("item-7");
+    public static By dynamicProperties = By.xpath("//span[text()='Dynamic Properties']");
 
     public static void clickTextBox() {
 
@@ -37,5 +38,10 @@ public class Elements {
         WebElement textBoxSection = driver().findElement(textBoxElement);
         Assert.assertTrue(textBoxSection.isDisplayed());
 
+    }
+    public static void clickDynamicProperties() {
+
+        WebElement element = driver().findElement(dynamicProperties);
+        element.click();
     }
 }

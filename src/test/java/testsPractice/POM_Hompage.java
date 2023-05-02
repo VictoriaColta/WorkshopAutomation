@@ -1,7 +1,6 @@
 package testsPractice;
 
-import elements.FramesElements;
-import elements.HomePageElements;
+import elements.HomePage;
 import model.SecondApplication;
 import org.testng.annotations.Test;
 
@@ -12,26 +11,26 @@ public class POM_Hompage {
     public void testPOM_Hompage() {
         SecondApplication.start();
 
-        HomePageElements.clickOnElementsSection();
+        HomePage.clickOnElementsSection();
         SecondApplication.backFromBrowser();
 
-        HomePageElements.validateHomePageDisplayed();
-        HomePageElements.clickFormsSection();
+        HomePage.validateHomePageDisplayed();
+        HomePage.clickFormsSection();
         SecondApplication.backFromBrowser();
 
-        HomePageElements.clickOnAlertsSection();
+        HomePage.clickOnAlertsSection();
         SecondApplication.backFromBrowser();
 
-        HomePageElements.clickWidgetsSection();
+        HomePage.clickWidgetsSection();
         SecondApplication.backFromBrowser();
-        HomePageElements.validateHomePageDisplayed();
+        HomePage.validateHomePageDisplayed();
 
 
-        HomePageElements.clickInteractionsSection();
+        HomePage.clickInteractionsSection();
         SecondApplication.backFromBrowser();
-        HomePageElements.validateHomePageDisplayed();
+        HomePage.validateHomePageDisplayed();
 
-        HomePageElements.clickBookStoreApplicationSection();
+        HomePage.clickBookStoreApplicationSection();
         SecondApplication.backFromBrowser();
 
         SecondApplication.close();

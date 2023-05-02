@@ -7,7 +7,7 @@ import org.testng.Assert;
 
 import static model.Application.driver;
 
-public class FindAndClickElements {
+public class FindAndClick {
     // locators
 
     private static By addRemoveElementPage = By.xpath("//a[@href='/add_remove_elements/']");

@@ -1,7 +1,6 @@
 package testsPractice;
 
-import elements.ABTestngPageElements;
-import elements.FindAndClickElements;
+import elements.ABTestngPage;
 import model.Application;
 import org.testng.Assert;
 import org.testng.annotations.Test;
@@ -12,11 +11,11 @@ public class POM_ABTestingPage {
 
         Application.start();
 
-        ABTestngPageElements.clickABTestingPage();
+        ABTestngPage.clickABTestingPage();
 
-        Assert.assertEquals("A/B Test Variation 1", ABTestngPageElements.getTitle());
+        Assert.assertEquals("A/B Test Variation 1", ABTestngPage.getTitle());
 
-        Assert.assertTrue(ABTestngPageElements.getParagraph().contains("Also known as split"));
+        Assert.assertTrue(ABTestngPage.getParagraph().contains("Also known as split"));
 
         Application.close();
     }

@@ -1,8 +1,7 @@
 package testsPractice;
 
-import elements.FramesElements;
-import elements.HomePageElements;
-import model.Application;
+import elements.AlertsFrames;
+import elements.HomePage;
 import model.SecondApplication;
 import org.testng.annotations.Test;
 
@@ -17,13 +16,13 @@ public class POM_Frames {
         SecondApplication.start();
 
 //         Step 1:
-        HomePageElements.clickOnAlertsSection();
+        HomePage.clickOnAlertsSection();
 
         //    Step 2:
-        FramesElements.clickFrameButton();
+        AlertsFrames.clickFrameButton();
 
         //    Step 3:
-        FramesElements.getText();
+        AlertsFrames.getText();
 
         SecondApplication.close();
     }
