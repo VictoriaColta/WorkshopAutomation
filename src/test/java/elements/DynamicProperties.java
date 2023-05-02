@@ -15,6 +15,8 @@ public class DynamicProperties {
 
     public static By visibleAfter = By.id("visibleAfter");
     public static By colorChangeButton = By.id("colorChange");
+    public static By whiteButton = By.xpath("//button[contains(text(),'Color Change')]");
+    public static By redButton = By.xpath("//button[contains(text(),'Color Change')]");
 
 
     public static boolean checkButtonIsVisibleAfterFiveSeconds(long value) {

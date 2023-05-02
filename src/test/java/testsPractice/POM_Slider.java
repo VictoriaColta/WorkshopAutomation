@@ -1,5 +1,12 @@
 package testsPractice;
 
+import elements.Slider;
+import elements.Widgets;
+import model.SecondApplication;
+import elements.HomePage;
+import model.SecondApplication;
+import org.testng.annotations.Test;
+
 public class POM_Slider {
 //    cerinta_11:
 //    Step 1: Click pe Widgets de pe pagina principala
@@ -8,6 +15,12 @@ public class POM_Slider {
 //    Step 4: Verifica valoare de input ca este egal cu 40
 //    Step 5: Repeta pasul 3 si 4 pentru valorile, 80, 30, 20, 99, 5, 15, 10
 
-
+    @Test
+    public void widgets_Slider() {
+        SecondApplication.start();
+        HomePage.clickWidgetsSection();
+        Slider.clickSlider();
+        Slider.moveSliderToForty();
+    }
 
 }
