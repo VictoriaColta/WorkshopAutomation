@@ -18,6 +18,7 @@ public class POMPractice {
         TextBox.setCurrentAddress("Mihai Viteazuu nr 2");
         TextBox.setPermanentAddress("Mihai Trasnet nr 3");
         TextBox.clickSubmit();
-        Assert.assertTrue(TextBox.getResultText().contains( "Ion"));
+        Assert.assertEquals(TextBox.getResultText(), "Ion");
+        Application.close();
     }
 }
