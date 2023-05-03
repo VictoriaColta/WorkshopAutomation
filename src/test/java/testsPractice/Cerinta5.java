@@ -11,7 +11,6 @@ public class Cerinta5 {
     public void cerinta5 () {
         // Step 1: Click pe Alerts, Frame & Windows de pe pagina principala
         Application.start();
-        Homepage.scrollUntilElementIsVisible();
         Homepage.clickAlertsMenu();
 
         // Step 2: Click pe "Frames" din lista

@@ -2,6 +2,7 @@ package alertsFrameWindows;
 
 import model.Application;
 import org.openqa.selenium.By;
+import utils.Handler;
 
 public class Frames {
 
@@ -9,9 +10,7 @@ public class Frames {
 
     private static By textIframe = By.id("sampleHeading");
 
-    public static void clickFrames () {
-        Application.driver().findElement(frames).click();
-    }
+    public static void clickFrames () {Handler.clickElement(frames);}
 
 
 }

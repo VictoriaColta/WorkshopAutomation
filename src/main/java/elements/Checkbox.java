@@ -4,6 +4,7 @@ import model.Application;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
+import utils.Handler;
 
 public class Checkbox {
 
@@ -16,17 +17,10 @@ public class Checkbox {
 
 
 
-    public static void clickCheckBox () {
-        Application.driver().findElement(checkBox).click();
-    }
-    public static void clickArrowHome () {
-        Application.driver().findElement(arrowHome).click();
-    }
-    public static void clickCheckboxDesktop () {
-        Application.driver().findElement(checkboxDesktop).click();
-    }
-    public static void getResultText () {Application.driver().findElement(result).getText();
-    }
+    public static void clickCheckBox () {Handler.clickElement(checkBox);}
+    public static void clickArrowHome () {Handler.clickElement(arrowHome);}
+    public static void clickCheckboxDesktop () {Handler.clickElement(checkBox);}
+    public static void getResultText () {Application.driver().findElement(result).getText();}
 
 
-}
+    }

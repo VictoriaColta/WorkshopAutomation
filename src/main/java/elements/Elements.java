@@ -3,7 +3,9 @@ package elements;
 import model.Application;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebElement;
+import utils.Handler;
 
 public class Elements {
 
@@ -14,31 +16,11 @@ public class Elements {
     private static By deleteButton = By.xpath("//button[text()='Delete']");
 
 
-    public static void clickAddRemoveElements () {
-        Application.driver().findElement(addRemoveElements).click();
-    }
-    public static void clickAddElement () {
-        Application.driver().findElement(addElementButton).click();
-    }
-    public static void deleteButtonDisplayed  () {Application.driver().findElement(deleteButton).isDisplayed();}
-    public static void clickDeleteButton () {
-        Application.driver().findElement(deleteButton).click();
-    }
-
-    public static boolean elementVisibilityValidation (By webelement) {
-        try {
-            Application.driver().findElement(webelement);
-                    return true;
-        } catch (Exception e) {
-            e.printStackTrace();
-            return false;
-        }
-    }
+    public static void clickAddRemoveElements () {Handler.clickElement(addRemoveElements);}
+    public static void clickAddElement () {Handler.clickElement(addElementButton);}
+    public static void clickDeleteButton () {Handler.clickElement(deleteButton);}
+    public static void deleteButtonDisplayed () {Handler.isElementDisplayed(deleteButton);}
     public static boolean isDeleteButtonVisible () {
-
-        return elementVisibilityValidation(deleteButton);
+        return Handler.elementVisibilityValidation(deleteButton);
     }
-
-
-
 }

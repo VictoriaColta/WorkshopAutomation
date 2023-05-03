@@ -1,6 +1,7 @@
 package testsPractice;
 
 import elements.Checkbox;
+import org.testng.Assert;
 import pages.Homepage;
 import model.Application;
 import org.testng.annotations.Test;
@@ -12,7 +13,6 @@ public class Cerinta2 {
 
     //  Step 1: Click pe Elements de pe pagina principala
     Application.start();
-    Homepage.scrollUntilElementIsVisible();
     Homepage.clickElementsMenu();
 
     //  Step 2: Click pe Check Box din lista

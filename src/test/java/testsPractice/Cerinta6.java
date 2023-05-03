@@ -11,7 +11,6 @@ public class Cerinta6 {
     public void cerinta6 () {
         //  Step 1: Click pe Widgets de pe pagina principala
         Application.start();
-        Homepage.scrollUntilElementIsVisible();
         Homepage.clickWidgetsMenu();
 
         //  Step 2: Click pe "Date Picker" din lista

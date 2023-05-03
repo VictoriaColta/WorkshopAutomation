@@ -3,6 +3,7 @@ package elements;
 import model.Application;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
+import utils.Handler;
 
 public class WebTable {
 
@@ -19,68 +20,33 @@ public class WebTable {
     private static By submitButton = By.id("submit");
 
 
-    public static void clickWebTables () {
-        Application.driver().findElement(webTables).click();
-    }
-    public static void clickEditButton () {
-        Application.driver().findElement(editButtonSecondRow).click();
-    }
-    public static void updateFirstName () {
-        WebElement element = Application.driver().findElement(firstName);
-        element.clear();
-        element.sendKeys("Ion");
-    }
-    public static void updateLastName () {
-        WebElement element = Application.driver().findElement(lastName);
-        element.clear();
-        element.sendKeys("Pop");
-    }
-    public static void updateAge () {
-        WebElement element = Application.driver().findElement(age);
-        element.clear();
-        element.sendKeys("40");
-    }
-    public static void updateEmail () {
-        WebElement element = Application.driver().findElement(email);
-        element.clear();
-        element.sendKeys("test@automation.com");
-    }
-    public static void updateSalary () {
-        WebElement element = Application.driver().findElement(salary);
-        element.clear();
-        element.sendKeys("15000");
-    }
-    public static void updateDepartment () {
-        WebElement element = Application.driver().findElement(department);
-        element.clear();
-        element.sendKeys("Legal");
-    }
-    public static void clickSubmit () {
-        Application.driver().findElement(submitButton).click();
-    }
-    public static void deleteThirdRow () {
-        Application.driver().findElement(deleteButtonThirdRow).click();
-    }
-    public static void addNewRow () {
-        Application.driver().findElement(addButton).click();
-    }
-    public static void addFirstName () {
-        Application.driver().findElement(firstName).sendKeys("Marian");
-    }
-    public static void addLastName () {
-        Application.driver().findElement(lastName).sendKeys("Lascu");
-    }
-    public static void addEmail () {
-        Application.driver().findElement(email).sendKeys("marian.lascu@gmail.com");
-    }
-    public static void addAge () {
-        Application.driver().findElement(age).sendKeys("35");
-    }
-    public static void addSalary () {
-        Application.driver().findElement(salary).sendKeys("18000");
-    }
-    public static void addDepartment () {Application.driver().findElement(department).sendKeys("Software Engineering");}
+    public static void clickWebTables () {Handler.clickElement(webTables);}
 
+    public static void clickEditButton () {Handler.clickElement(editButtonSecondRow);};
+
+    public static void clickAddRow () {Handler.clickElement(addButton);}
+
+    public static void updateRecords (String name1, String name2, String userEmail, String userAge, String userSalary, String userDepartment) {
+    Handler.sendTextToElement(firstName, name1);
+    Handler.sendTextToElement(lastName, name2);
+    Handler.sendTextToElement(email, userEmail);
+    Handler.sendTextToElement(age,userAge);
+    Handler.sendTextToElement(salary, userSalary);
+    Handler.sendTextToElement(department, userDepartment);
+    }
+
+    public static void addRecord (String name1, String name2, String userEmail, String userAge, String userSalary, String userDepartment) {
+        Handler.sendTextToElement(firstName, name1);
+        Handler.sendTextToElement(lastName, name2);
+        Handler.sendTextToElement(email, userEmail);
+        Handler.sendTextToElement(age,userAge);
+        Handler.sendTextToElement(salary, userSalary);
+        Handler.sendTextToElement(department, userDepartment);
+    }
+
+    public static void clickSubmit () {Handler.clickElement(submitButton);};
+
+    public static void deleteThirdRow () {Handler.clickElement(deleteButtonThirdRow);}
 
 
 }
