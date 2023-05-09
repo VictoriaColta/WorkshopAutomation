@@ -15,8 +15,8 @@ public class DynamicProperties {
 
     public static By visibleAfter = By.id("visibleAfter");
     public static By colorChangeButton = By.id("colorChange");
-    public static By whiteButton = By.xpath("//button[contains(text(),'Color Change')]");
-    public static By redButton = By.xpath("//button[contains(text(),'Color Change')]");
+//    public static By whiteButton = By.xpath("//button[contains(text(),'Color Change')]");
+//    public static By redButton = By.xpath("//button[contains(text(),'Color Change')]");
 
 
     public static boolean checkButtonIsVisibleAfterFiveSeconds(long value) {
@@ -32,15 +32,8 @@ public class DynamicProperties {
        return true;
     }
 
-//    public static boolean isButtonIsVisibleAfter(int seconds) {
-//
-//        try {
-//            Handler.waitForVisibilityOf(visibleAfter, seconds);
-//        } catch (TimeoutException e) {
-//            return false;
-//        }
-//        return true;
-//    }
+// return ul mai poate fi scris astfel:
+// return element.getAttribute("class").contains("text-danger");
 
 
 }

@@ -1,12 +1,24 @@
-
-<suite name = "Suite">
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name = "testSuite">
     <test name="Test">
-        <clases>
-            <class name = "testPractice.POM_ABTestingPage">
+        <classes>
+            <class name = "testsPractice.POM_ABTestingPage">
             </class>
-            <class name = "POM_CheckBox">
+            <class name = "testsPractice.POM_CheckBox">
             </class>
-
-        </clases>
+            <class name = "testsPractice.POM_Widgets">
+            </class>
+            <class name = "testsPractice.POM_FindAndClick">
+            </class>
+            <class name = "testsPractice.POM_FindAndSend">
+            </class>
+            <class name = "testsPractice.POM_Frames">
+            </class>
+            <class name = "testsPractice.POM_DragAndDrop">
+            </class>
+            <class name = "testsPractice.POM_Homepage">
+            </class>
+        </classes>
     </test>
 </suite>

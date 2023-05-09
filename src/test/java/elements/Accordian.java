@@ -9,11 +9,12 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 
-public class Accordion {
+public class Accordian {
 
     private static final By accordianElement = By.xpath("//span[normalize-space()='Accordian']");
     private static final By whyDoeWeUseItElement = By.id("section3Heading");
     private static final By textFromWhyDoWeUseItElement = By.xpath("//p[contains(text(),'It is a long established fact that a reader will b')]");
+
     public static void clickOnAccordianSection() {
 
         WebElement accordian = SecondApplication.driver().findElement(accordianElement);
@@ -26,6 +27,18 @@ public class Accordion {
         whyDoeWeUseItSection.click();
 
     }
+    public static boolean isWhyDoWeUseItCollapsed() {
+
+        WebElement whyDoeWeUseIt = SecondApplication.driver().findElement(whyDoeWeUseItElement);
+        String whyDoeWeUseItClass = whyDoeWeUseIt.getAttribute("class");
+
+        if(whyDoeWeUseItClass.contains("show")) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
     public static boolean getTextFromWhyDoWeUseItAfterWaitingThreeSeconds() {
 
         WebElement textFromWhyDoWeUseItSection = SecondApplication.driver().findElement(textFromWhyDoWeUseItElement);
@@ -34,11 +47,12 @@ public class Accordion {
         JavascriptExecutor js = (JavascriptExecutor) SecondApplication.driver();
         js.executeScript("window.scrollBy(0,-250)");
 
-        WebDriverWait wait = new WebDriverWait(SecondApplication.driver(), 3);
+        WebDriverWait wait = new WebDriverWait(SecondApplication.driver(), 5);
         wait.until(ExpectedConditions.visibilityOfElementLocated(textFromWhyDoWeUseItElement));
 
         return false;
     }
+
     public static String verifyInputFromWhyDoeWeUseItSection() {
 
         WebElement textFromWhyDoWeUseItSection = SecondApplication.driver().findElement(textFromWhyDoWeUseItElement);

@@ -15,7 +15,7 @@ public class POM_WebTables {
 //    Step 5: Adauga o noua linie in tabel cu orice valori
 
     @Test
-    public void testPOM() {
+    public void testPOM_WebTables() {
         SecondApplication.start();
         HomePage.clickOnElementsSection();
         Elements.clickWebTables();

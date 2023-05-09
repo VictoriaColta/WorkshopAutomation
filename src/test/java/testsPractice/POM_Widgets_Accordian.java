@@ -1,11 +1,12 @@
 package testsPractice;
 
-import elements.Accordion;
+import elements.Accordian;
 import elements.HomePage;
 import model.SecondApplication;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
-public class POM_Widgets_Accordion {
+public class POM_Widgets_Accordian {
 
 //    cerinta_10:
 //    Step 1: Click pe Widgets de pe pagina principala
@@ -18,10 +19,10 @@ public class POM_Widgets_Accordion {
     public void widgets_Accordion() {
         SecondApplication.start();
         HomePage.clickWidgetsSection();
-        Accordion.clickOnAccordianSection();
-
-        Accordion.clickOnWhyDoWeUseItSection();
-        Accordion.verifyInputFromWhyDoeWeUseItSection();
+        Accordian.clickOnAccordianSection();
+        Assert.assertFalse(Accordian.isWhyDoWeUseItCollapsed());
+        Accordian.clickOnWhyDoWeUseItSection();
+        Accordian.verifyInputFromWhyDoeWeUseItSection();
 
 
         SecondApplication.close();

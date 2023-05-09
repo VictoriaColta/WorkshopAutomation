@@ -4,11 +4,11 @@ import elements.HomePage;
 import model.SecondApplication;
 import org.testng.annotations.Test;
 
-public class POM_Hompage {
+public class POM_Homepage {
 
 
     @Test
-    public void testPOM_Hompage() {
+    public void testPOM_Homepage() {
         SecondApplication.start();
 
         HomePage.clickOnElementsSection();

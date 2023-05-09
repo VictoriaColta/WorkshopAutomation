@@ -4,6 +4,7 @@ import elements.Alerts;
 import elements.AlertsFrames;
 import elements.HomePage;
 import model.SecondApplication;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
 public class POMTestAlertsFrameWindows {
