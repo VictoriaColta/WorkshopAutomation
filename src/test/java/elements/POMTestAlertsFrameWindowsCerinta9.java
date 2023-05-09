@@ -25,17 +25,33 @@ public class POMTestAlertsFrameWindowsCerinta9 {
         HomePage.clickAlertsFrameWindows();
         AlertsFrameWindowsCerinta9.clickAlerts();
         Alerts.clickFirstAlertButton();
-        Assert.assertTrue(Alerts.getFirstAlertMessage().contains("You clicked a button"));
+        Assert.assertEquals(Alerts.getAlertText(), "You clicked a button");
+        Alerts.clickAlertAccept();
         Alerts.clickSecondAlertButton();
-        Assert.assertTrue(Alerts.getSecondAlertMessage().contains("This alert appeared after 5 seconds"));
+        Assert.assertEquals(Alerts.getAlertText(), "This alert appeared after 5 seconds");
+        Alerts.clickAlertAccept();
         Alerts.clickThirdAlertButton();
-        Assert.assertTrue(Alerts.getThirdAlertMessage().contains("Do you confirm action?"));
-        Assert.assertTrue(Alerts.getMessageAfterCancelingThirdAlert().contains("Cancel"));
+        Assert.assertEquals(Alerts.getAlertText(), "Do you confirm action?");
+        Alerts.clickAlertAccept();
         Alerts.clickFourthAlertButton();
-        Alerts.sendInputAlertField("Niculescu Diana Elena");
-        Assert.assertTrue(Alerts.getMessageAfterSendingInput().contains("Niculescu Diana Elena"));
+        Alerts.sendAlertInput("Niculescu Diana Elena");
+        Assert.assertEquals(Alerts.verifyMessageAfterSendingInput(), "You entered Niculescu Diana Elena");
         ApplicationNumberTwo.close();
-
     }
 
 }
+
+// Prima rezolvare
+
+////        Assert.assertTrue(Alerts.getFirstAlertMessage().contains("You clicked a button"));
+//        Alerts.clickSecondAlertButton();
+//        Assert.assertTrue(Alerts.getSecondAlertMessage().contains("This alert appeared after 5 seconds"));
+//        Alerts.clickThirdAlertButton();
+//        Assert.assertTrue(Alerts.getThirdAlertMessage().contains("Do you confirm action?"));
+//        Assert.assertTrue(Alerts.getMessageAfterCancelingThirdAlert().contains("Cancel"));
+//        Alerts.clickFourthAlertButton();
+//        Alerts.sendInputAlertField("Niculescu Diana Elena");
+//        Assert.assertTrue(Alerts.getMessageAfterSendingInput().contains("Niculescu Diana Elena"));
+//        ApplicationNumberTwo.close();
+
+

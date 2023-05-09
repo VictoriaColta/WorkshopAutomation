@@ -7,6 +7,8 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
+import java.util.concurrent.TimeUnit;
+
 public class ApplicationNumberTwo {
 
     private static final String linkToSite = "https://demoqa.com/";
@@ -25,6 +27,8 @@ public class ApplicationNumberTwo {
         options.addArguments("start-maximized");
         driver.set(new ChromeDriver(options));
         driver().get(linkToSite);
+
+//        driver().manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 
     }
 
