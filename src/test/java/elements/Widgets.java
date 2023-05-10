@@ -4,15 +4,16 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
+import utils.Handler;
 
 import static model.SecondApplication.driver;
 
 public class Widgets {
-    private static By datePickerButtonElement = By.xpath("//span[normalize-space()='Date Picker']");
-    private static By datePickerMonthYearInputElement = By.xpath("//input[@id='datePickerMonthYearInput']");
-    private static By dateAndTimePickerInputElement = By.id("dateAndTimePickerInput");
-    private static By dateAndTimeLabelElement = By.xpath("//div[contains(text(),'Date And Time')]");
-
+    private static final By datePickerButtonElement = By.xpath("//span[normalize-space()='Date Picker']");
+    private static final By datePickerMonthYearInputElement = By.xpath("//input[@id='datePickerMonthYearInput']");
+    private static final By dateAndTimePickerInputElement = By.id("dateAndTimePickerInput");
+    private static final By dateAndTimeLabelElement = By.xpath("//div[contains(text(),'Date And Time')]");
+    private static final By sliderButton = By.xpath("//span[text()='Slider']");
 
     private static String dateForFirstInput = "05/04/2023";
     private static String dateForSecondInput = "May 4, 2023 4:34 PM";
@@ -49,5 +50,7 @@ public class Widgets {
 
         Assert.assertEquals(dateForSecondInput, datePickerButton);
     }
-
+    public static void clickSlider(){
+        Handler.clickElement(sliderButton);
+    }
 }

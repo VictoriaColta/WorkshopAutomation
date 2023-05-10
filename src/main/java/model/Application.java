@@ -19,7 +19,7 @@ public class Application {
 
     public static void start() {
         //TO DO: Set the path to driver - fill where is necessary
-        System.setProperty("webdriver.chrome.driver", "driver/chromedriver111.exe");
+        System.setProperty("webdriver.chrome.driver", "driver/chromedriver.exe");
         ChromeOptions options = new ChromeOptions();
         options.addArguments("no-sandbox");
         options.addArguments("start-maximized");

@@ -14,7 +14,7 @@ public class HomePage {
     private static By widgetsButtonElement = By.xpath("//h5[normalize-space()='Widgets']");
     private static By interactionsButtonElement = By.xpath("//h5[normalize-space()='Interactions']");
     private static By bookStoreApplicationButtonElement = By.xpath(" //h5[normalize-space()='Book Store Application']");
-    private static By allSectionElement = By.className("home-body");
+    private static final By allSectionElement = By.className("home-body");
     public static By alertsFramesWindows = By.xpath("//*[text()='Alerts, Frame & Windows']");
 
 

@@ -22,8 +22,7 @@ public class POM_Widgets_Accordian {
         Accordian.clickOnAccordianSection();
         Assert.assertFalse(Accordian.isWhyDoWeUseItCollapsed());
         Accordian.clickOnWhyDoWeUseItSection();
-        Accordian.verifyInputFromWhyDoeWeUseItSection();
-
+        Accordian.verifyInputFromWhyDoWeUseItSection();
 
         SecondApplication.close();
 
