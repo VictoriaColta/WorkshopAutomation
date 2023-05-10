@@ -45,6 +45,6 @@ public class POMTestSlider {
         Assert.assertEquals(Slider.verifySliderValue(), "15");
         Slider.moveSlider(10);
         Assert.assertEquals(Slider.verifySliderValue(), "10");
-//        ApplicationNumberTwo.close();
+        ApplicationNumberTwo.close();
     }
 }
