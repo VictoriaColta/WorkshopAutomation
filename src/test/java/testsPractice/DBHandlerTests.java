@@ -3,7 +3,14 @@ package testsPractice;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-import java.sql.*;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.sql.ResultSet;
+import java.util.ArrayList;
+import java.util.List;
+
 
 public class DBHandlerTests {
 
@@ -17,11 +24,14 @@ public class DBHandlerTests {
         // execute query
         Statement st = con.createStatement();
         ResultSet rs
-                = st.executeQuery("SELECT * FROM classicmodels.offices;");
+                = st.executeQuery("SELECT * FROM classicmodels.offices where country = 'USA';");
         // handle results
+        List<String> arrayList = new ArrayList<>();
         while (rs.next()) {
             System.out.println(rs.getString("city"));
+            arrayList.add(rs.getString("city"));
         }
+        Assert.assertEquals(arrayList.get(0), "San Francisco");
         // close connection
         con.close();
     }
