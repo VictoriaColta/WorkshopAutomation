@@ -26,8 +26,19 @@ public class AlertsTest {
         Assert.assertEquals(alertSecondText, "This alert appeared after 5 seconds");
 
         Alerts.clickThirdAlertButton();
-        String alertThirdText = Alerts.getThirdAlertText();
-        Assert.assertEquals(alertThirdText,"Do you confirm action?");
+//        String alertThirdText = Alerts.getThirdAlertText();
+//        Assert.assertEquals(alertThirdText,"Do you confirm action?");
+        Alerts.clickOkButton();
+        String thirdButtonLabelText = Alerts.getThirdButtonLabelText();
+        Assert.assertEquals(thirdButtonLabelText, "You selected Ok");
+
+        Alerts.clickThirdAlertButton();
+        Alerts.clickCancelButton();
+        thirdButtonLabelText = Alerts.getThirdButtonLabelText();
+        Assert.assertEquals(thirdButtonLabelText,"You selected Cancel");
+
+
+
     }
 
 }

@@ -2,8 +2,11 @@ package learning;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class Application {
 //TO DO
@@ -22,6 +25,12 @@ public class Application {
         options.addArguments("start-maximized");
         driver.set(new ChromeDriver(options));
     }
+    public static void waitUntilElementIsVisible(WebElement element) {
+        WebDriverWait wait = new WebDriverWait(driver(),4);
+        wait.until(ExpectedConditions.elementToBeClickable(element));
+    }
+
+
 
 
     public static void close() {

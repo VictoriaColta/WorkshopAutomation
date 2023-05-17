@@ -15,6 +15,7 @@ public class Alerts {
     public static By alertButton= By.id("alertButton");
     public static By timerAlertButton = By.id("timerAlertButton");
     public static By confirmButton = By.id("confirmButton");
+    public static By confirmResult = By.id("confirmResult");
 
 
     public static void clickAlertsSubcategory() {
@@ -47,6 +48,7 @@ public class Alerts {
     }
     public static void clickThirdAlertButton(){
         WebElement element= driver().findElement(confirmButton);
+        element.click();
     }
     public static String getThirdAlertText(){
         Alert alert = driver().switchTo().alert();
@@ -54,8 +56,18 @@ public class Alerts {
         alert.accept();
         return alertThirdText;
     }
-    public static void thisAlertCancelClick() {
+    public static void clickOkButton() {
         Alert alert = driver().switchTo().alert();
+        String alertThirdText = alert.getText();
+        alert.accept();
+    }
+    public static void clickCancelButton() {
+        Alert alert = driver().switchTo().alert();
+        String alertThirdText = alert.getText();
         alert.dismiss();
+    }
+    public static String getThirdButtonLabelText(){
+        WebElement element= driver().findElement(confirmResult);
+        return element.getText();
     }
 }
