@@ -18,6 +18,6 @@ public class FramesPage {
         WebElement iFrame = driver().findElement(locator);
         driver().switchTo().frame(iFrame);
         String textFrameOne = driver().findElement(By.id("sampleHeading")).getText();
-        System.out.println(textFrameOne);
+        System.out.println("Text of the frame is: "+" "+textFrameOne);
     }
 }

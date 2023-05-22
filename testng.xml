@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="DemoQa">
+    <test name="Regression">
+        <classes>
+            <class name="testsPractice.Cerinta2"/>
+            <class name="testsPractice.Cerinta3"/>
+            <class name="testsPractice.Cerinta4"/>
+            <class name="testsPractice.Cerinta5"/>
+            <class name="testsPractice.Cerinta6"/>
+            <class name="testsPractice.Cerinta8"/>
+            <class name="testsPractice.Cerinta9"/>
+            <class name="testsPractice.Cerinta14"/>
+        </classes>
+    </test> <!-- Test -->
+</suite> <!-- Suite -->

@@ -1,10 +1,10 @@
 package model;
 
-import org.junit.After;
-import org.junit.Before;
+import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+
 
 public class Application {
     //TO DO
@@ -17,18 +17,12 @@ public class Application {
 
 
     public static void start() {
-        //TO DO: Set the path to driver - fill where is necessary
-        System.setProperty("webdriver.chrome.driver", "driver/chromedriver.exe");
-
+        WebDriverManager.chromedriver().setup();
         ChromeOptions options = new ChromeOptions();
         options.addArguments("start-maximized");
         options.addArguments("--remote-allow-origins=*");
         driver.set(new ChromeDriver(options));
-
-        //TO DO: Set the URL
         driver().get(link);
-
-
     }
 
     public static void close() {

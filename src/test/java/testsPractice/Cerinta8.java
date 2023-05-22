@@ -6,9 +6,7 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.DynamicPropertiesPage;
 
-import java.time.Duration;
-
-public class DynamicProperties {
+public class Cerinta8 {
     @Test
     public void cerinta8(){
         ApplicationDemoQa.start();

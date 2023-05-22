@@ -2,17 +2,21 @@ package testsPractice;
 
 import model.ApplicationDemoQa;
 import model.HomePageDemoQa;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import pages.CheckBoxPage;
 
-public class CheckBox {
+public class Cerinta2 {
+
+
     @Test
     public void testCerinta2(){
         ApplicationDemoQa.start();
         HomePageDemoQa.clickTab(HomePageDemoQa.elements);
-        CheckBoxPage.clickCheckBoxSection();
-        CheckBoxPage.clickToogle();
-        CheckBoxPage.clickDesktopCheckBox();
+        CheckBoxPage.click(CheckBoxPage.checkBoxSection);
+        CheckBoxPage.click(CheckBoxPage.toggle);
+        CheckBoxPage.click(CheckBoxPage.desktop);
         CheckBoxPage.getText();
         ApplicationDemoQa.close();
     }

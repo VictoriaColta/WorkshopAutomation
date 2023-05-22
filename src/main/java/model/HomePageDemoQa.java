@@ -11,6 +11,7 @@ public class HomePageDemoQa {
     public static By forms = By.xpath("//*[text()='Forms']");
     public static By alertsFramesWindows = By.xpath("//*[text()='Alerts, Frame & Windows']");
     public static By widgets = By.xpath("//*[text()='Widgets']");
+    public static By interactions=By.xpath("//*[text()='Interactions']");
 
     public static void clickTab(By locator) {
 

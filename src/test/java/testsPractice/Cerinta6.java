@@ -5,7 +5,7 @@ import model.HomePageDemoQa;
 import org.testng.annotations.Test;
 import pages.DatePickerPage;
 
-public class DatePicker {
+public class Cerinta6 {
     @Test
     public void cerinta6() {
         ApplicationDemoQa.start();

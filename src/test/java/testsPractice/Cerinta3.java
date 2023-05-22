@@ -5,9 +5,9 @@ import model.HomePageDemoQa;
 import org.testng.annotations.Test;
 import pages.WebTablesPage;
 
-public class WebTables {
+public class Cerinta3 {
     @Test
-    public void testCerinta3() throws InterruptedException {
+    public void testCerinta3()  {
         ApplicationDemoQa.start();
         HomePageDemoQa.clickTab(HomePageDemoQa.elements);
         WebTablesPage.click(WebTablesPage.webTablesSection);
@@ -19,7 +19,6 @@ public class WebTables {
         WebTablesPage.enterValues(WebTablesPage.salaryField,"1500");
         WebTablesPage.enterValues(WebTablesPage.departmentField,"Legal");
         WebTablesPage.click(WebTablesPage.submitButton);
-        Thread.sleep(2000);
         WebTablesPage.click(WebTablesPage.deleteButton);
         WebTablesPage.click(WebTablesPage.addNewRecord);
         WebTablesPage.enterValues(WebTablesPage.firstNameField,"Madalina");

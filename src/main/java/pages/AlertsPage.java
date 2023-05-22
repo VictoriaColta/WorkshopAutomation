@@ -25,6 +25,13 @@ public class AlertsPage {
         element.click();
     }
 
+    public static String getAlertText() {
+        Alert alert = driver().switchTo().alert();
+        String alertText = alert.getText();
+        alert.accept();
+        System.out.println("First alert message is:  " + alertText);
+        return alertText;
+    }
     public static String getFirstAlertBoxMessage() {
         Alert alert = driver().switchTo().alert();
         String alertText = alert.getText();

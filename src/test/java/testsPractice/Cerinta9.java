@@ -6,7 +6,7 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.AlertsPage;
 
-public class Alerts {
+public class Cerinta9 {
     @Test
     public void cerinta9() throws InterruptedException {
         ApplicationDemoQa.start();
