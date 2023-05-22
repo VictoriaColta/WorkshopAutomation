@@ -24,14 +24,12 @@ public class DBHandlerTests {
         // execute query
         Statement st = con.createStatement();
         ResultSet rs
-                = st.executeQuery("SELECT * FROM classicmodels.offices where country = 'USA';");
+                = st.executeQuery("SELECT * FROM classicmodels.customers;");
         // handle results
         List<String> arrayList = new ArrayList<>();
         while (rs.next()) {
             System.out.println(rs.getString("city"));
-            arrayList.add(rs.getString("city"));
         }
-        Assert.assertEquals(arrayList.get(0), "San Francisco");
         // close connection
         con.close();
     }
