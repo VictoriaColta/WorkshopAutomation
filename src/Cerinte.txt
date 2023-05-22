@@ -102,4 +102,16 @@ Folosind model/Application.java, sa se deschida aplicatia https://demoqa.com/
                 Step 4: Sa se dea click pe casutele de pe diagonala principala intr-un mod automat
 
 
+Cerinte SQL:
+
+        Cerinta SQL_1: Afisati in consola toti clientii ce au orderdetails.quantityOrdered intre 30 si 40.
+
+        Cerinta SQL_2: Afisati in consola toti clientii ce au order.amount intre 40000 si 60000.
+
+        Cerinta SQL_3: Afisati in consola numele produselor ce au pretul de cumparare mai mare decat 40 si sunt din gama Motorcycles.
+
+        Cerinta SQL_4: Afisati in consola doar numele si checkNumber al clientilor cu amount peste 70000.
+
+        Cerinta SQL_5: Scrieti un algoritm in care sa verificati din ce tara au fost cele mai multe comenzi.
+
 
