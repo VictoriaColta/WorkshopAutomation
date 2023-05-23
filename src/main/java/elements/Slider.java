@@ -48,6 +48,7 @@ public class Slider {
         // pt a misca slider-ul sub valori mai mici de 50, trebuie ca xOffset sa fie negativ
         // nr maxim de pixeli pe axa orizontala = 528
         // un punct de pe slider pe axa orizontala va avea :
+
         // sliderWidth (528) / maxValue (100) = 5.28 pixeli
 
         // Formula pt a afla numarul de pixeli atribuit fiecarui punct de pe slider este:

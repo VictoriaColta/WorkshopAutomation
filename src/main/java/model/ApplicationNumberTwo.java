@@ -1,5 +1,6 @@
 package model;
 
+import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -13,22 +14,20 @@ public class ApplicationNumberTwo {
 
     private static final String linkToSite = "https://demoqa.com/";
 
-    private static ThreadLocal<WebDriver> driver = new ThreadLocal<>();
+    private static WebDriver driver;
 
     public static WebDriver driver() {
-        return driver.get();
+        return driver;
     }
 
     public static void start() {
 
-        System.setProperty("webdriver.chrome.driver", "driver/chromedriver111.exe");
+        WebDriverManager.chromedriver().setup();
 
         ChromeOptions options = new ChromeOptions();
         options.addArguments("start-maximized");
-        driver.set(new ChromeDriver(options));
+        driver = new ChromeDriver(options);
         driver().get(linkToSite);
-
-//        driver().manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 
     }
 

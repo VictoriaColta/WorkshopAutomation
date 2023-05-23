@@ -2,7 +2,7 @@ package elements;
 
 import model.ApplicationNumberTwo;
 import model.HomePage;
-import org.testng.annotations.Test;
+import org.testng.annotations.*;
 
 //cerinta_2:
 //        Step 1: Click pe Elements de pe pagina principala
@@ -12,10 +12,22 @@ import org.testng.annotations.Test;
 //        Step 5: Sa se salveze textul generat de checkbox-ul selectat intr-o variabila, apoi afisata in consola
 
 //Aceasta este a doua rezolvare
+
     public class POMTestCheckBox {
+        @BeforeSuite
+        public static void printBeforeSuiteText() {
+
+            System.out.println("This is before suite text for POMTestCheckBox");
+
+        }
+        @BeforeMethod
+        public static void printBeforeMethodText() {
+
+            System.out.println("This is before method text for POMTestCheckBox");
+
+        }
         @Test
         public void testPOMCheckBox (){
-
 //        Step 1: Click pe Elements de pe pagina principala
             ApplicationNumberTwo.start();
             HomePage.clickTab(HomePage.elements);
@@ -30,7 +42,60 @@ import org.testng.annotations.Test;
 //            Inchide aplicatia
             ApplicationNumberTwo.close();
         }
+        @AfterSuite
+        public static void printAfterSuiteText() {
+
+            System.out.println("This is after suite text for POMTestCheckBox");
+
+        }
+
+        @AfterMethod
+
+        public static void printAfterMethodText() {
+
+            System.out.println("This is after method text for POMTestCheckBox");
+
+        }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 // Aceasta este prima rezolvare.

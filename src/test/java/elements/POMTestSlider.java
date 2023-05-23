@@ -1,14 +1,8 @@
 package elements;
-
 import model.ApplicationNumberTwo;
 import model.HomePage;
 import org.testng.Assert;
-import org.testng.annotations.Test;
-
-import static elements.Slider.slider;
-import static elements.Slider.verifySliderValue;
-
-
+import org.testng.annotations.*;
 //
 //cerinta_11:
 //        Step 1: Click pe Widgets de pe pagina principala
@@ -19,6 +13,14 @@ import static elements.Slider.verifySliderValue;
 
 
 public class POMTestSlider {
+
+    @BeforeSuite
+
+    public static void printBeforeSuiteText() {
+
+        System.out.println("This is before suite text for POMTestSlider");
+
+    }
 
     @Test
 
@@ -46,5 +48,25 @@ public class POMTestSlider {
         Slider.moveSlider(10);
         Assert.assertEquals(Slider.verifySliderValue(), "10");
         ApplicationNumberTwo.close();
+    }
+    @AfterSuite
+
+    public static void printAfterSuiteText() {
+
+        System.out.println("This is after suite text for POMTestSlider");
+
+    }
+    @BeforeMethod
+    public static void printBeforeMethodText() {
+
+        System.out.println("This is before method text for POMTestSlider");
+
+    }
+    @AfterMethod
+
+    public static void printAfterMethodText() {
+
+        System.out.println("This is after method text for POMTestSlider");
+
     }
 }

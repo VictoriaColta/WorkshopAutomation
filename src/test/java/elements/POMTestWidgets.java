@@ -3,6 +3,8 @@ package elements;
 import model.ApplicationNumberTwo;
 import model.HomePage;
 import org.testng.Assert;
+import org.testng.annotations.AfterSuite;
+import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.Test;
 
 
@@ -35,4 +37,5 @@ public class POMTestWidgets {
         ApplicationNumberTwo.close();
 
     }
+
 }
