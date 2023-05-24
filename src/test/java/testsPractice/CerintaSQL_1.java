@@ -1,5 +1,6 @@
 package testsPractice;
 
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import java.sql.*;
@@ -20,8 +21,8 @@ public class CerintaSQL_1 {
         ResultSet rs
                 = st.executeQuery("select c.contactLastName, od.quantityOrdered\n" +
                 "from customers c\n" +
-                "inner join orders o on c.customerNumber=o.customerNumber\n" +
-                "inner join orderdetails od on o.orderNumber=od.orderNumber\n" +
+                "join orders o on c.customerNumber=o.customerNumber\n" +
+                "join orderdetails od on o.orderNumber=od.orderNumber\n" +
                 "where od.quantityOrdered between 30 and 40;");
         // handle results
         List<String> arrayList = new ArrayList<>();
@@ -36,17 +37,8 @@ public class CerintaSQL_1 {
             intList.add(Integer.parseInt(str)); //to convert the string to int and add to intList
         }
         for (int number : intList) {
-            assert number >= 30 && number <= 40 : "Number" + number + "is not between 30 and 40"; //this is chatGpt version, much better
-//            if(number>=30 && number<=40){
-//                System.out.println("All numbers are between 30 and 40 ");
-//            }
-//            else{
-//                System.out.println("Numbers are not between 30 and 40");
-//            }
-            //this is my version but is not ok, to many prints ;
+            Assert.assertTrue(number >= 30 && number <= 40);
         }
-        System.out.println("All numbers are between 30 and 40 ");
-
         // close connection
         con.close();
     }

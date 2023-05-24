@@ -17,9 +17,19 @@ public class DatePickerPage {
     public static By futureTime = By.xpath("//li[text()='15:30']");
 
     public static void click(By locator) {
-
         WebElement element = driver().findElement(locator);
         element.click();
+    }
+    public static void setDate(){
+        click(datePicker);
+        click(monthYearInput);
+        click(monthToggle);
+        click(month);
+        click(day);
+        click(dateAndTimeInput);
+        click(nextMonthArrow);
+        click(futureMonthDay);
+        click(futureTime);
     }
 
     public static String getDate(By locator) {
