@@ -18,13 +18,17 @@ public class CerintaSQL_1 {
         // execute query
         Statement st = con.createStatement();
         ResultSet rs
-                = st.executeQuery("select * from classicmodels.orderdetails where quantityOrdered between 30 and 40;");
+                = st.executeQuery("select c.contactLastName, od.quantityOrdered\n" +
+                "from customers c\n" +
+                "inner join orders o on c.customerNumber=o.customerNumber\n" +
+                "inner join orderdetails od on o.orderNumber=od.orderNumber\n" +
+                "where od.quantityOrdered between 30 and 40;");
         // handle results
         List<String> arrayList = new ArrayList<>();
         while (rs.next()) {
-            System.out.println("Order number is: " + rs.getString("orderNumber"));
-            System.out.println("Quantity ordered is: " + rs.getString("quantityOrdered"));
-            arrayList.add(rs.getString("quantityOrdered"));
+            System.out.println("Contact last name is: " + rs.getString("c.contactLastName"));
+            System.out.println("Quantity ordered is: " + rs.getString("od.quantityOrdered"));
+            arrayList.add(rs.getString("od.quantityOrdered"));
         }
         System.out.println("array list " + arrayList);
         ArrayList<Integer> intList = new ArrayList<>();
