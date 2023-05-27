@@ -12,11 +12,11 @@ public class Cerinta11 {
         HomePageDemoQa.clickTab(HomePageDemoQa.widgets);
         SliderPage.click(SliderPage.sliderSection);
         SliderPage.moveSlider(40);
-        SliderPage.assertSliderHasValue(40);
+        SliderPage.sliderHasValue(40);
         SliderPage.moveSlider(80);
-        SliderPage.assertSliderHasValue(80);
+        SliderPage.sliderHasValue(80);
         SliderPage.moveSlider(30);
-        SliderPage.assertSliderHasValue(30);
+        SliderPage.sliderHasValue(30);
         SliderPage.moveSlider(20);
         SliderPage.moveSlider(5);
         SliderPage.moveSlider(15);

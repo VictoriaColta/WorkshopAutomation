@@ -39,6 +39,6 @@ public class SliderPage {
         return sliderValue;
     }
 
-    public static void assertSliderHasValue(int value) {Assert.assertEquals(value,getSliderValue());
+    public static void sliderHasValue(int value) {Assert.assertEquals(value,getSliderValue());
     }
 }
