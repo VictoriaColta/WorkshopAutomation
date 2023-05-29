@@ -7,9 +7,8 @@ import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
-public class CerintaSQL_2 {
-
-    // Cerinta SQL_2: Afisati in consola toti clientii ce au order.amount intre 40000 si 60000.
+public class CerintaSQL_4 {
+    //Cerinta SQL_4: Afisati in consola doar numele si checkNumber al clientilor cu amount peste 70000.
     @Test
     public void executeQuery() throws SQLException, ClassNotFoundException {
         // set jdbc driver for MySQL
@@ -20,17 +19,23 @@ public class CerintaSQL_2 {
         // execute query
         Statement st = con.createStatement();
         ResultSet rs
-                = st.executeQuery("select customerNumber, amount from payments where amount between 40000 and 60000;");
+                = st.executeQuery("select c.customerName, p.checkNumber, p.amount\n" +
+                "from customers c\n" +
+                "join payments p on p.customerNumber=c.customerNumber\n" +
+                "where p.amount >70000;");
 
         // handle results
         List<Double> amountList = new ArrayList<>();
+
         while (rs.next()) {
-            System.out.println("Customer number with order between 40000 and 60000 is : " + rs.getString("customerNumber"));
+            System.out.println("Customer name is : " + rs.getString("customerName"));
+            System.out.println("Check number is: : " + rs.getString("checkNumber"));
             amountList.add(rs.getDouble("amount"));
+
         }
-        System.out.println("amount list is :  " + amountList);
+        System.out.println("Amount list " + amountList);
         for (double amount : amountList) {
-            Assert.assertTrue(amount >= 40000 && amount <= 60000);
+            Assert.assertTrue(amount > 70000);
         }
         // close connection
         con.close();
