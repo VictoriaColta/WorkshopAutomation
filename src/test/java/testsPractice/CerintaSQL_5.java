@@ -1,4 +1,7 @@
+package testsPractice;
+
 import org.testng.annotations.Test;
+import utils.DataLoader;
 
 import java.sql.*;
 import java.util.Collections;
@@ -9,13 +12,15 @@ import static java.lang.System.out;
 
 public class CerintaSQL_5 {
     // Cerinta SQL_5: Scrieti un algoritm in care sa verificati din ce tara au fost cele mai multe comenzi.
+    public static String user= DataLoader.getInstance().getUser();
+    public static String password=DataLoader.getInstance().getPassword();
     @Test
     public void executeQuery() throws SQLException, ClassNotFoundException {
         // set jdbc driver for MySQL
         Class.forName("com.mysql.cj.jdbc.Driver");
         // Start connecting to the DB
         Connection con = DriverManager.getConnection(
-                "jdbc:mysql://localhost:3306/classicmodels", "root", "Acce$$Denied13");
+                "jdbc:mysql://localhost:3306/classicmodels", user, password);
         // execute query
         Statement st = con.createStatement();
         ResultSet rs
@@ -35,9 +40,7 @@ public class CerintaSQL_5 {
         }
         out.println("map is : " + countryOrders);
         String countryMaxOrder = null;
-        for (Map.Entry<String, Integer> entry : countryOrders.entrySet()) {
-            countryMaxOrder = Collections.max(countryOrders.entrySet(), Map.Entry.comparingByValue()).getKey();
-        }
+        countryMaxOrder = Collections.max(countryOrders.entrySet(), Map.Entry.comparingByValue()).getKey();
         out.println("The country with the most orders is: " + countryMaxOrder);
         //     out.println("array list " + arrayList);
 //        ArrayList<Integer> intList = new ArrayList<>();

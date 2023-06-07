@@ -2,6 +2,7 @@ package testsPractice;
 
 import org.testng.Assert;
 import org.testng.annotations.Test;
+import utils.DataLoader;
 
 import java.sql.*;
 import java.util.ArrayList;
@@ -10,13 +11,15 @@ import java.util.List;
 public class CerintaSQL_2 {
 
     // Cerinta SQL_2: Afisati in consola toti clientii ce au order.amount intre 40000 si 60000.
+    public static String user= DataLoader.getInstance().getUser();
+    public static String password=DataLoader.getInstance().getPassword();
     @Test
     public void executeQuery() throws SQLException, ClassNotFoundException {
         // set jdbc driver for MySQL
         Class.forName("com.mysql.cj.jdbc.Driver");
         // Start connecting to the DB
         Connection con = DriverManager.getConnection(
-                "jdbc:mysql://localhost:3306/classicmodels", "root", "Acce$$Denied13");
+                "jdbc:mysql://localhost:3306/classicmodels", user, password);
         // execute query
         Statement st = con.createStatement();
         ResultSet rs
