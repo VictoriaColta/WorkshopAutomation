@@ -1,5 +1,6 @@
 package model;
 
+import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -19,14 +20,13 @@ public class Application {
 
     public static void start() {
         //TO DO: Set the path to driver - fill where is necessary
-        System.setProperty("webdriver.chrome.driver", "driver/chromedriver.exe");
+        WebDriverManager.chromedriver().setup();
         ChromeOptions options = new ChromeOptions();
-        options.addArguments("no-sandbox");
         options.addArguments("start-maximized");
+        options.addArguments("no-sandbox");
         options.addArguments("disable-dev-shm-usage");
         options.addArguments("window-size=1920x1080");
         options.addArguments("proxy=null");
-
         driver.set(new ChromeDriver(options));
 
         //TO DO: Set the URL

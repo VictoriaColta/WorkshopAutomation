@@ -4,6 +4,9 @@ import elements.HomePage;
 
 import elements.WebTables;
 import model.SecondApplication;
+import org.junit.After;
+import org.junit.Before;
+import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.Test;
 
 public class POM_WebTables {
@@ -13,6 +16,20 @@ public class POM_WebTables {
 //    Step 3: Editeaza al 2lea rand cu urmatoarele valori: First Name: Ion, Last Name: Pop, Age: 40, Email: test@automation.com, Salary: 15000, Department: Legal
 //    Step 4: Sa se stearga al 3lea rand din tabel
 //    Step 5: Adauga o noua linie in tabel cu orice valori
+
+    @BeforeSuite
+    public void beforeSuite(){
+        System.out.println("this method runs before suite ");
+    }
+    @Before
+    public void beforeMethod(){
+        System.out.println("link will be opened!");
+    }
+
+    @After
+    public void afterDriverClose(){
+        System.out.println("this is the after method");
+    }
 
     @Test
     public void testPOM_WebTables() {
