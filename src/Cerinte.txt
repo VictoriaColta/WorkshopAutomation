@@ -114,4 +114,40 @@ Cerinte SQL:
 
         Cerinta SQL_5: Scrieti un algoritm in care sa verificati din ce tara au fost cele mai multe comenzi.
 
+Cerinte backend (API):
+    URL to be tested: https://petstore.swagger.io/
+    Cerinta API_1: Creaza un request de tip POST pentru a adauga un nou animal de companie in magazin (endpoint /pet)
+                   - request-ul sa fie creeat la alegere cu json files/pojo/string
+                   - sa se verifice status code la request (folositi Assert)
+                   - sa se verifice numele ("name") ca este la fel cu cel din request
+
+    Cerinta API_2: Schimbati statusul unui animal din magazin (endpoint /pet)
+                   - assert status code
+                   - verificati ca response-ul este corect
+                   - Aditional, verificati statusul unui animal cu GET petId inainte si dupa update
+
+    Cerinta API_3: Afisati in consola numarul animalelor ce au status predominant:
+                   Exemplu 1:
+                   PET 1 - Available, PET 2 - Available, PET 3 - Available, PET 4 - Available
+                   PET 5 - Sold
+                   PET 6 - Pending, PET 7 - Pending
+                   Raspuns corect: Available, nr of pets => 4
+                   Exemplu 2:
+                   PET 1 - Available, PET 2 - Available, PET 3 - Available, PET 4 - Available
+                   PET 5 - Sold
+                   PET 6 - Pending, PET 7 - Pending, PET 8 - Pending, PET 9 - Pending, PET 10 - Pending, PET 11 - Pending
+                   Raspuns corect: Pending, nr of pets => 6
+
+    Cerinta API_4: Adauga un pet nou, sterge acel pet, si verifica ca nu se mai gaseste dupa id
+
+    Cerinta API_5: Creeaza o comanda de a cumpara un pet in viitor cu 3 luni (endpoint /store/order)
+                   IMPORTANT!!! Codul vostru trebuie sa mearga cu orice numar de luni in viitor ( *** NU DOAR 3 *** )
+                   Verifica comanda cu GET ca a fost plasata cu succes ( returneaza status code ~200)
+                   Sterge comanda
+                   Verifica comanda cu GET ca nu mai exista
+
+    Cerinta API_6: Pentru "microserviciul" user, creeaza minim 10 scenarii de test
+                   Exemplu: Register a new user, Log in, Log out, delete user.
+                   Folositi date de test !
+
 
