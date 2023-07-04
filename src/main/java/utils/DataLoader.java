@@ -25,7 +25,12 @@ public class DataLoader {
     public String getPassword(){
         String prop=properties.getProperty("password");
         if(prop!=null)return prop;
-        else throw new RuntimeException("Property user is not specified in .properties file");
+        else throw new RuntimeException("Property password is not specified in .properties file");
+    }
+    public String getbaseUrl(){
+        String prop=properties.getProperty("base_url");
+        if(prop!=null)return prop;
+        else throw new RuntimeException("Property base_url is not specified in .properties file");
     }
 
 

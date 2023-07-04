@@ -11,8 +11,8 @@ import java.util.List;
 public class CerintaSQL_2 {
 
     // Cerinta SQL_2: Afisati in consola toti clientii ce au order.amount intre 40000 si 60000.
-    public static String user= DataLoader.getInstance().getUser();
-    public static String password=DataLoader.getInstance().getPassword();
+    String user = DataLoader.getInstance().getUser();
+    String password = DataLoader.getInstance().getPassword();
     @Test
     public void executeQuery() throws SQLException, ClassNotFoundException {
         // set jdbc driver for MySQL
@@ -24,7 +24,6 @@ public class CerintaSQL_2 {
         Statement st = con.createStatement();
         ResultSet rs
                 = st.executeQuery("select customerNumber, amount from payments where amount between 40000 and 60000;");
-
         // handle results
         List<Double> amountList = new ArrayList<>();
         while (rs.next()) {
