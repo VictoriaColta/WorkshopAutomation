@@ -25,6 +25,16 @@ public class HelperMethods {
                 build();
     }
 
+    public static RequestSpecification getRequestSpec(String base_url,String apiKey) {
+        RequestSpecBuilder requestSpec = new RequestSpecBuilder();
+        return requestSpec.setBaseUri(base_url).
+                addHeader("Content-Type", "application/json").
+                addHeader("acccept", "").
+                addHeader("api_key", apiKey).
+                setContentType(ContentType.JSON).
+                build();
+    }
+
     public static Response performPost(RequestSpecification spec, Object requestBody, String endpoint) {
         return RestAssured
                 .given()
@@ -58,6 +68,14 @@ public class HelperMethods {
                 .queryParam(key, value)
                 .when()
                 .get(endpoint);
+    }
+
+    public static Response performDelete(RequestSpecification spec,String endpoint) {
+        return RestAssured
+                .given()
+                .spec(spec)
+                .when()
+                .delete(endpoint);
     }
 
     public static JSONObject getJsonObject(String filePath) {

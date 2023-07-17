@@ -33,5 +33,11 @@ public class DataLoader {
         else throw new RuntimeException("Property base_url is not specified in .properties file");
     }
 
+    public String getApiKey(){
+        String prop=properties.getProperty("api_key");
+        if(prop!=null)return prop;
+        else throw new RuntimeException("Property api_key is not specified in .properties file");
+    }
+
 
 }
