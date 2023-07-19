@@ -3,6 +3,8 @@ package utils;
 
 import io.restassured.RestAssured;
 import io.restassured.builder.RequestSpecBuilder;
+import io.restassured.filter.log.RequestLoggingFilter;
+import io.restassured.filter.log.ResponseLoggingFilter;
 import io.restassured.http.ContentType;
 import io.restassured.response.Response;
 import io.restassured.specification.RequestSpecification;
@@ -10,26 +12,42 @@ import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 
-import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.io.IOException;
+import java.io.*;
 
 public class HelperMethods {
+    public static RequestLoggingFilter getRequestFilters() {
+        PrintStream log = null;
+        try {
+            log = new PrintStream(new FileOutputStream("request-logging.txt"));
+        } catch (FileNotFoundException e) {
+            throw new RuntimeException(e);
+        }
+        RequestLoggingFilter requestLoggingFilter = new RequestLoggingFilter(log);
+        return requestLoggingFilter;
+    }
+    public static ResponseLoggingFilter getResponseFilters() {
+        PrintStream log = null;
+        try {
+            log = new PrintStream(new FileOutputStream("response-logging.txt"));
+        } catch (FileNotFoundException e) {
+            throw new RuntimeException(e);
+        }
+        ResponseLoggingFilter responseLoggingFilter = new ResponseLoggingFilter(log);
+        return responseLoggingFilter;
+    }
 
     public static RequestSpecification getRequestSpec(String base_url) {
         RequestSpecBuilder requestSpec = new RequestSpecBuilder();
         return requestSpec.setBaseUri(base_url).
                 addHeader("Content-Type", "application/json").
-                addHeader("acccept", "").
                 setContentType(ContentType.JSON).
                 build();
     }
 
-    public static RequestSpecification getRequestSpec(String base_url,String apiKey) {
+    public static RequestSpecification getRequestSpec(String base_url, String apiKey) {
         RequestSpecBuilder requestSpec = new RequestSpecBuilder();
         return requestSpec.setBaseUri(base_url).
                 addHeader("Content-Type", "application/json").
-                addHeader("acccept", "").
                 addHeader("api_key", apiKey).
                 setContentType(ContentType.JSON).
                 build();
@@ -70,10 +88,29 @@ public class HelperMethods {
                 .get(endpoint);
     }
 
-    public static Response performDelete(RequestSpecification spec,String endpoint) {
+    public static Response performGetWithPathParams(RequestSpecification spec, String key, int value, String endpoint) {
         return RestAssured
                 .given()
                 .spec(spec)
+                .filters(getRequestFilters(),getResponseFilters())
+                .pathParam(key, value)
+                .when()
+                .get(endpoint);
+    }
+
+    public static Response performDelete(RequestSpecification spec, String endpoint) {
+        return RestAssured
+                .given()
+                .spec(spec)
+                .when()
+                .delete(endpoint);
+    }
+
+    public static Response performDeleteWithPathParams(RequestSpecification spec,String key, int value, String endpoint) {
+        return RestAssured
+                .given()
+                .spec(spec)
+                .pathParam(key, value)
                 .when()
                 .delete(endpoint);
     }

@@ -38,15 +38,14 @@ public class CerintaAPI_4 {
 
         //DELETE THAT PET
         spec = HelperMethods.getRequestSpec(base_url, api_key);
-        String id=Integer.toString(idToAdd);
-        endpoint=PetStoreRoutes.PET.getUrl()+"/"+id;
-        response = HelperMethods.performDelete(spec, endpoint);
+        endpoint=PetStoreRoutes.PET_ID.getUrl();
+        response = HelperMethods.performDeleteWithPathParams(spec,"petId", idToAdd ,endpoint);
         response.prettyPrint();
         Assert.assertEquals(response.statusCode(), 200);
 
         //PERFORM GET BY ID TO VERIFY THAT ID IS NO LONGER FOUND
         spec = HelperMethods.getRequestSpec(base_url);
-        response=HelperMethods.performGet(spec,endpoint);
+        response=HelperMethods.performGetWithPathParams(spec,"petId",idToAdd,endpoint);
         response.prettyPrint();
         Assert.assertEquals(response.statusCode(), 404);
         Assert.assertEquals(response.jsonPath().getString("message"), "Pet not found");

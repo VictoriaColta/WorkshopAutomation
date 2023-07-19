@@ -2,3 +2,5 @@
 *.iml
 target
 driver
+request-logging.txt
+response-logging.txt

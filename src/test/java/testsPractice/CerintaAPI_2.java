@@ -26,17 +26,17 @@ public class CerintaAPI_2 {
         spec = HelperMethods.getRequestSpec(base_url);
         JSONObject jsonObject;
         //aici trebuie updatat manual animalId
-        String animalId="123";
+       int petId=123;
         //ADD PET
         spec = HelperMethods.getRequestSpec(base_url);
         endpoint = PetStoreRoutes.PET.getUrl();
         jsonObject = HelperMethods.getJsonObject("jsons/addNewAnimal.json");
-        jsonObject.put("id", animalId);
+        jsonObject.put("id", petId);
         response = HelperMethods.performPost(spec, jsonObject, endpoint);
         System.out.println("ADD NEW ANIMAL");
         response.prettyPrint();
         //GET
-        endpoint = PetStoreRoutes.PET.getUrl() + "/"+animalId;
+        endpoint = PetStoreRoutes.PET.getUrl() + "/"+petId;
         response = HelperMethods.performGet(spec, endpoint);
         System.out.println("GET ANIMAL BY ID");
         response.prettyPrint();
@@ -44,7 +44,7 @@ public class CerintaAPI_2 {
         Assert.assertEquals(response.statusCode(), 200);
         //PUT
         jsonObject = HelperMethods.getJsonObject("jsons/addNewAnimal.json");
-        jsonObject.put("id",animalId);
+        jsonObject.put("id",petId);
         jsonObject.put("status", "pending");
         endpoint = PetStoreRoutes.PET.getUrl();
         response = HelperMethods.performPut(spec, jsonObject.toJSONString(), endpoint);
@@ -52,8 +52,8 @@ public class CerintaAPI_2 {
         response.getBody().prettyPrint();
         Assert.assertEquals(response.statusCode(), 200);
         //GET AGAIN
-        endpoint = PetStoreRoutes.PET.getUrl() + "/"+animalId;
-        response = HelperMethods.performGet(spec, endpoint);
+        endpoint = PetStoreRoutes.PET_ID.getUrl();
+        response = HelperMethods.performGetWithPathParams(spec,"pet",petId,endpoint);
         System.out.println("GET THE ANIMAL AGAIN");
         response.prettyPrint();
         Assert.assertEquals(response.jsonPath().getString("status"), "pending");
