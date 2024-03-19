@@ -1,0 +1,22 @@
+
+https://the-internet.herokuapp.com/add_remove_elements/
+//div[@id='content']
+//div[@id='page-footer']
+
+https://the-internet.herokuapp.com/dropdown
+//select[@id='dropdown']
+//option[@value='1']
+
+https://the-internet.herokuapp.com/forgot_password
+//input[@id='email']
+//button[@id='form_submit']
+
+
+//input[@id='target']
+//input[@type='text']
+//img[@src='/img/avatar-blank.jpg']
+//span[@slot='my-text']
+//p[@id='result']
+
+//div[@id='hot-spot']
+//p[contains(.,'Context menu items are custom additions that appear in the right-click menu.')]

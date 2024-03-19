@@ -1,5 +1,6 @@
 package model;
 
+import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -9,7 +10,7 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 
 public class Application {
 //TO DO
-    private static final String link = "The link to the site";
+    private static final String link = "https://the-internet.herokuapp.com/";
     private static ThreadLocal<WebDriver> driver = new ThreadLocal<>();
 
     public static WebDriver driver() {
@@ -19,21 +20,24 @@ public class Application {
 
     public static void start() {
         //TO DO: Set the path to driver - fill where is necessary
-        System.setProperty("webdriver.chrome.driver", "The location folder of driver.exe");
-
+        WebDriverManager.chromedriver().setup();
         ChromeOptions options = new ChromeOptions();
         options.addArguments("start-maximized");
+        options.addArguments("no-sandbox");
+        options.addArguments("disable-dev-shm-usage");
+        options.addArguments("window-size=1920x1080");
+        options.addArguments("proxy=null");
         driver.set(new ChromeDriver(options));
 
         //TO DO: Set the URL
-        driver().get("");
+        driver().get(link);
 
 
     }
 
     public static void close() {
         //Write your code here to close the driver
-
+        driver().close();
     }
 
   }
